@@ -27,8 +27,8 @@ import jwt
 from six import PY3, integer_types, iteritems, text_type
 from six.moves.urllib.parse import quote
 
-from click import client
-from click import models
+from docusign_click import client
+from docusign_click import models
 from .configuration import Configuration
 from .api_exception import ApiException, ArgumentException
 from .api_response import RESTClientObject, RESTResponse

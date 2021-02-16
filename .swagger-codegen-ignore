@@ -43,8 +43,8 @@ setup.cfg
 tox.ini
 docs/
 test/
-click/client/
+docusign_click/client/
 #docusign_rooms/__init__.py
-click/api_client.py
-click/configuration.py
-click/rest.py
+docusign_click/api_client.py
+docusign_click/configuration.py
+docusign_click/rest.py

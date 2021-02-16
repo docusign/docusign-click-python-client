@@ -1,12 +1,12 @@
 # coding: utf-8
 
 from __future__ import absolute_import, print_function
-from click import AccountsApi, ApiException
+from docusign_click import AccountsApi, ApiException
 
 import base64
 import os
 import unittest
-import click as docusign
+import docusign_click as docusign
 
 Username = os.environ.get("USER_NAME")
 IntegratorKey = os.environ.get("INTEGRATOR_KEY_JWT")

@@ -1262,7 +1262,7 @@ class AccountsApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def get_clickwrap_agreements(self, account_id, clickwrap_id, client_user_id, status, **kwargs):
+    def get_clickwrap_agreements(self, account_id, clickwrap_id, **kwargs):
         """
         Gets the Clickwraps for an account
         This method makes a synchronous HTTP request by default. To make an
@@ -1271,16 +1271,16 @@ class AccountsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_clickwrap_agreements(account_id, clickwrap_id, client_user_id, status, callback=callback_function)
+        >>> thread = api.get_clickwrap_agreements(account_id, clickwrap_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str account_id: (required)
         :param str clickwrap_id: (required)
-        :param str client_user_id: (required)
+        :param str client_user_id:
         :param str from_date:
         :param str page_number:
-        :param str status: (required)
+        :param str status:
         :param str to_date:
         :return: ClickwrapAgreementsResponse
                  If the method is called asynchronously,
@@ -1288,12 +1288,12 @@ class AccountsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.get_clickwrap_agreements_with_http_info(account_id, clickwrap_id, client_user_id, status, **kwargs)
+            return self.get_clickwrap_agreements_with_http_info(account_id, clickwrap_id, **kwargs)
         else:
-            (data) = self.get_clickwrap_agreements_with_http_info(account_id, clickwrap_id, client_user_id, status, **kwargs)
+            (data) = self.get_clickwrap_agreements_with_http_info(account_id, clickwrap_id, **kwargs)
             return data
 
-    def get_clickwrap_agreements_with_http_info(self, account_id, clickwrap_id, client_user_id, status, **kwargs):
+    def get_clickwrap_agreements_with_http_info(self, account_id, clickwrap_id, **kwargs):
         """
         Gets the Clickwraps for an account
         This method makes a synchronous HTTP request by default. To make an
@@ -1302,16 +1302,16 @@ class AccountsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_clickwrap_agreements_with_http_info(account_id, clickwrap_id, client_user_id, status, callback=callback_function)
+        >>> thread = api.get_clickwrap_agreements_with_http_info(account_id, clickwrap_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str account_id: (required)
         :param str clickwrap_id: (required)
-        :param str client_user_id: (required)
+        :param str client_user_id:
         :param str from_date:
         :param str page_number:
-        :param str status: (required)
+        :param str status:
         :param str to_date:
         :return: ClickwrapAgreementsResponse
                  If the method is called asynchronously,
@@ -1339,12 +1339,6 @@ class AccountsApi(object):
         # verify the required parameter 'clickwrap_id' is set
         if ('clickwrap_id' not in params) or (params['clickwrap_id'] is None):
             raise ValueError("Missing the required parameter `clickwrap_id` when calling `get_clickwrap_agreements`")
-        # verify the required parameter 'client_user_id' is set
-        if ('client_user_id' not in params) or (params['client_user_id'] is None):
-            raise ValueError("Missing the required parameter `client_user_id` when calling `get_clickwrap_agreements`")
-        # verify the required parameter 'status' is set
-        if ('status' not in params) or (params['status'] is None):
-            raise ValueError("Missing the required parameter `status` when calling `get_clickwrap_agreements`")
 
 
         collection_formats = {}
@@ -1511,7 +1505,7 @@ class AccountsApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def get_clickwrap_version_agreements(self, account_id, clickwrap_id, version_id, client_user_id, **kwargs):
+    def get_clickwrap_version_agreements(self, account_id, clickwrap_id, version_id, **kwargs):
         """
         Gets the agreement responses for a clickwrap version
         This method makes a synchronous HTTP request by default. To make an
@@ -1520,14 +1514,14 @@ class AccountsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_clickwrap_version_agreements(account_id, clickwrap_id, version_id, client_user_id, callback=callback_function)
+        >>> thread = api.get_clickwrap_version_agreements(account_id, clickwrap_id, version_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str account_id: (required)
         :param str clickwrap_id: (required)
         :param str version_id: (required)
-        :param str client_user_id: (required)
+        :param str client_user_id:
         :param str from_date:
         :param str page_number:
         :param str status:
@@ -1538,12 +1532,12 @@ class AccountsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.get_clickwrap_version_agreements_with_http_info(account_id, clickwrap_id, version_id, client_user_id, **kwargs)
+            return self.get_clickwrap_version_agreements_with_http_info(account_id, clickwrap_id, version_id, **kwargs)
         else:
-            (data) = self.get_clickwrap_version_agreements_with_http_info(account_id, clickwrap_id, version_id, client_user_id, **kwargs)
+            (data) = self.get_clickwrap_version_agreements_with_http_info(account_id, clickwrap_id, version_id, **kwargs)
             return data
 
-    def get_clickwrap_version_agreements_with_http_info(self, account_id, clickwrap_id, version_id, client_user_id, **kwargs):
+    def get_clickwrap_version_agreements_with_http_info(self, account_id, clickwrap_id, version_id, **kwargs):
         """
         Gets the agreement responses for a clickwrap version
         This method makes a synchronous HTTP request by default. To make an
@@ -1552,14 +1546,14 @@ class AccountsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_clickwrap_version_agreements_with_http_info(account_id, clickwrap_id, version_id, client_user_id, callback=callback_function)
+        >>> thread = api.get_clickwrap_version_agreements_with_http_info(account_id, clickwrap_id, version_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str account_id: (required)
         :param str clickwrap_id: (required)
         :param str version_id: (required)
-        :param str client_user_id: (required)
+        :param str client_user_id:
         :param str from_date:
         :param str page_number:
         :param str status:
@@ -1593,9 +1587,6 @@ class AccountsApi(object):
         # verify the required parameter 'version_id' is set
         if ('version_id' not in params) or (params['version_id'] is None):
             raise ValueError("Missing the required parameter `version_id` when calling `get_clickwrap_version_agreements`")
-        # verify the required parameter 'client_user_id' is set
-        if ('client_user_id' not in params) or (params['client_user_id'] is None):
-            raise ValueError("Missing the required parameter `client_user_id` when calling `get_clickwrap_version_agreements`")
 
 
         collection_formats = {}
@@ -1649,7 +1640,7 @@ class AccountsApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def get_clickwrap_version_agreements_by_number(self, account_id, clickwrap_id, version_number, client_user_id, **kwargs):
+    def get_clickwrap_version_agreements_by_number(self, account_id, clickwrap_id, version_number, **kwargs):
         """
         Gets the agreement responses for a clickwrap version
         This method makes a synchronous HTTP request by default. To make an
@@ -1658,14 +1649,14 @@ class AccountsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_clickwrap_version_agreements_by_number(account_id, clickwrap_id, version_number, client_user_id, callback=callback_function)
+        >>> thread = api.get_clickwrap_version_agreements_by_number(account_id, clickwrap_id, version_number, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str account_id: (required)
         :param str clickwrap_id: (required)
         :param str version_number: (required)
-        :param str client_user_id: (required)
+        :param str client_user_id:
         :param str from_date:
         :param str page_number:
         :param str status:
@@ -1676,12 +1667,12 @@ class AccountsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.get_clickwrap_version_agreements_by_number_with_http_info(account_id, clickwrap_id, version_number, client_user_id, **kwargs)
+            return self.get_clickwrap_version_agreements_by_number_with_http_info(account_id, clickwrap_id, version_number, **kwargs)
         else:
-            (data) = self.get_clickwrap_version_agreements_by_number_with_http_info(account_id, clickwrap_id, version_number, client_user_id, **kwargs)
+            (data) = self.get_clickwrap_version_agreements_by_number_with_http_info(account_id, clickwrap_id, version_number, **kwargs)
             return data
 
-    def get_clickwrap_version_agreements_by_number_with_http_info(self, account_id, clickwrap_id, version_number, client_user_id, **kwargs):
+    def get_clickwrap_version_agreements_by_number_with_http_info(self, account_id, clickwrap_id, version_number, **kwargs):
         """
         Gets the agreement responses for a clickwrap version
         This method makes a synchronous HTTP request by default. To make an
@@ -1690,14 +1681,14 @@ class AccountsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_clickwrap_version_agreements_by_number_with_http_info(account_id, clickwrap_id, version_number, client_user_id, callback=callback_function)
+        >>> thread = api.get_clickwrap_version_agreements_by_number_with_http_info(account_id, clickwrap_id, version_number, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str account_id: (required)
         :param str clickwrap_id: (required)
         :param str version_number: (required)
-        :param str client_user_id: (required)
+        :param str client_user_id:
         :param str from_date:
         :param str page_number:
         :param str status:
@@ -1731,9 +1722,6 @@ class AccountsApi(object):
         # verify the required parameter 'version_number' is set
         if ('version_number' not in params) or (params['version_number'] is None):
             raise ValueError("Missing the required parameter `version_number` when calling `get_clickwrap_version_agreements_by_number`")
-        # verify the required parameter 'client_user_id' is set
-        if ('client_user_id' not in params) or (params['client_user_id'] is None):
-            raise ValueError("Missing the required parameter `client_user_id` when calling `get_clickwrap_version_agreements_by_number`")
 
 
         collection_formats = {}
@@ -2027,6 +2015,7 @@ class AccountsApi(object):
         :param str from_date:
         :param str owner_user_id:
         :param str page_number:
+        :param str shared:
         :param str status:
         :param str to_date:
         :return: ClickwrapVersionsResponse
@@ -2057,6 +2046,7 @@ class AccountsApi(object):
         :param str from_date:
         :param str owner_user_id:
         :param str page_number:
+        :param str shared:
         :param str status:
         :param str to_date:
         :return: ClickwrapVersionsResponse
@@ -2064,7 +2054,7 @@ class AccountsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['account_id', 'from_date', 'owner_user_id', 'page_number', 'status', 'to_date']
+        all_params = ['account_id', 'from_date', 'owner_user_id', 'page_number', 'shared', 'status', 'to_date']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2098,6 +2088,8 @@ class AccountsApi(object):
             query_params['ownerUserId'] = params['owner_user_id']
         if 'page_number' in params:
             query_params['page_number'] = params['page_number']
+        if 'shared' in params:
+            query_params['shared'] = params['shared']
         if 'status' in params:
             query_params['status'] = params['status']
         if 'to_date' in params:
