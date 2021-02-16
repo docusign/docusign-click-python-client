@@ -35,7 +35,8 @@ class ClickwrapRequest(object):
         'display_settings': 'DisplaySettings',
         'documents': 'list[Document]',
         'fields_to_null': 'str',
-        'is_majorversion': 'bool',
+        'is_major_version': 'bool',
+        'is_shared': 'bool',
         'name': 'str',
         'require_reacceptance': 'bool',
         'scheduled_date': 'object',
@@ -50,7 +51,8 @@ class ClickwrapRequest(object):
         'display_settings': 'displaySettings',
         'documents': 'documents',
         'fields_to_null': 'fieldsToNull',
-        'is_majorversion': 'isMajorversion',
+        'is_major_version': 'isMajorVersion',
+        'is_shared': 'isShared',
         'name': 'name',
         'require_reacceptance': 'requireReacceptance',
         'scheduled_date': 'scheduledDate',
@@ -60,14 +62,15 @@ class ClickwrapRequest(object):
         'transfer_to_user_id': 'transferToUserId'
     }
 
-    def __init__(self, clickwrap_name=None, display_settings=None, documents=None, fields_to_null=None, is_majorversion=None, name=None, require_reacceptance=None, scheduled_date=None, scheduled_reacceptance=None, status=None, transfer_from_user_id=None, transfer_to_user_id=None):  # noqa: E501
+    def __init__(self, clickwrap_name=None, display_settings=None, documents=None, fields_to_null=None, is_major_version=None, is_shared=None, name=None, require_reacceptance=None, scheduled_date=None, scheduled_reacceptance=None, status=None, transfer_from_user_id=None, transfer_to_user_id=None):  # noqa: E501
         """ClickwrapRequest - a model defined in Swagger"""  # noqa: E501
 
         self._clickwrap_name = None
         self._display_settings = None
         self._documents = None
         self._fields_to_null = None
-        self._is_majorversion = None
+        self._is_major_version = None
+        self._is_shared = None
         self._name = None
         self._require_reacceptance = None
         self._scheduled_date = None
@@ -85,8 +88,10 @@ class ClickwrapRequest(object):
             self.documents = documents
         if fields_to_null is not None:
             self.fields_to_null = fields_to_null
-        if is_majorversion is not None:
-            self.is_majorversion = is_majorversion
+        if is_major_version is not None:
+            self.is_major_version = is_major_version
+        if is_shared is not None:
+            self.is_shared = is_shared
         if name is not None:
             self.name = name
         if require_reacceptance is not None:
@@ -193,27 +198,50 @@ class ClickwrapRequest(object):
         self._fields_to_null = fields_to_null
 
     @property
-    def is_majorversion(self):
-        """Gets the is_majorversion of this ClickwrapRequest.  # noqa: E501
+    def is_major_version(self):
+        """Gets the is_major_version of this ClickwrapRequest.  # noqa: E501
 
           # noqa: E501
 
-        :return: The is_majorversion of this ClickwrapRequest.  # noqa: E501
+        :return: The is_major_version of this ClickwrapRequest.  # noqa: E501
         :rtype: bool
         """
-        return self._is_majorversion
+        return self._is_major_version
 
-    @is_majorversion.setter
-    def is_majorversion(self, is_majorversion):
-        """Sets the is_majorversion of this ClickwrapRequest.
+    @is_major_version.setter
+    def is_major_version(self, is_major_version):
+        """Sets the is_major_version of this ClickwrapRequest.
 
           # noqa: E501
 
-        :param is_majorversion: The is_majorversion of this ClickwrapRequest.  # noqa: E501
+        :param is_major_version: The is_major_version of this ClickwrapRequest.  # noqa: E501
         :type: bool
         """
 
-        self._is_majorversion = is_majorversion
+        self._is_major_version = is_major_version
+
+    @property
+    def is_shared(self):
+        """Gets the is_shared of this ClickwrapRequest.  # noqa: E501
+
+          # noqa: E501
+
+        :return: The is_shared of this ClickwrapRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_shared
+
+    @is_shared.setter
+    def is_shared(self, is_shared):
+        """Sets the is_shared of this ClickwrapRequest.
+
+          # noqa: E501
+
+        :param is_shared: The is_shared of this ClickwrapRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_shared = is_shared
 
     @property
     def name(self):

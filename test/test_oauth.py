@@ -17,8 +17,8 @@ import base64
 import os
 import unittest
 
-from click.client.api_client import ApiClient
-from click.client.auth.oauth import OAuthToken
+from docusign_click.client.api_client import ApiClient
+from docusign_click.client.auth.oauth import OAuthToken
 
 
 class TestConfig(object):
