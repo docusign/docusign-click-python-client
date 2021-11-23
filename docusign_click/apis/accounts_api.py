@@ -596,121 +596,6 @@ class AccountsApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def delete_clickwrap_version_by_number(self, account_id, clickwrap_id, version_number, **kwargs):
-        """
-        Delete a Clickwrap version specified by versionNumber. Use versionId instead of versionNumber
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_clickwrap_version_by_number(account_id, clickwrap_id, version_number, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param str version_number: (required)
-        :return: ClickwrapVersionSummaryResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
-            return self.delete_clickwrap_version_by_number_with_http_info(account_id, clickwrap_id, version_number, **kwargs)
-        else:
-            (data) = self.delete_clickwrap_version_by_number_with_http_info(account_id, clickwrap_id, version_number, **kwargs)
-            return data
-
-    def delete_clickwrap_version_by_number_with_http_info(self, account_id, clickwrap_id, version_number, **kwargs):
-        """
-        Delete a Clickwrap version specified by versionNumber. Use versionId instead of versionNumber
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_clickwrap_version_by_number_with_http_info(account_id, clickwrap_id, version_number, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param str version_number: (required)
-        :return: ClickwrapVersionSummaryResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['account_id', 'clickwrap_id', 'version_number']
-        all_params.append('callback')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_clickwrap_version_by_number" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'account_id' is set
-        if ('account_id' not in params) or (params['account_id'] is None):
-            raise ValueError("Missing the required parameter `account_id` when calling `delete_clickwrap_version_by_number`")
-        # verify the required parameter 'clickwrap_id' is set
-        if ('clickwrap_id' not in params) or (params['clickwrap_id'] is None):
-            raise ValueError("Missing the required parameter `clickwrap_id` when calling `delete_clickwrap_version_by_number`")
-        # verify the required parameter 'version_number' is set
-        if ('version_number' not in params) or (params['version_number'] is None):
-            raise ValueError("Missing the required parameter `version_number` when calling `delete_clickwrap_version_by_number`")
-
-
-        collection_formats = {}
-
-        resource_path = '/v1/accounts/{accountId}/clickwraps/{clickwrapId}/versions/{versionNumber}'.replace('{format}', 'json')
-        path_params = {}
-        if 'account_id' in params:
-            path_params['accountId'] = params['account_id']
-        if 'clickwrap_id' in params:
-            path_params['clickwrapId'] = params['clickwrap_id']
-        if 'version_number' in params:
-            path_params['versionNumber'] = params['version_number']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-
-        # Authentication setting
-        auth_settings = []
-
-        return self.api_client.call_api(resource_path, 'DELETE',
-                                        path_params,
-                                        query_params,
-                                        header_params,
-                                        body=body_params,
-                                        post_params=form_params,
-                                        files=local_var_files,
-                                        response_type='ClickwrapVersionSummaryResponse',
-                                        auth_settings=auth_settings,
-                                        callback=params.get('callback'),
-                                        _return_http_data_only=params.get('_return_http_data_only'),
-                                        _preload_content=params.get('_preload_content', True),
-                                        _request_timeout=params.get('_request_timeout'),
-                                        collection_formats=collection_formats)
-
     def delete_clickwrap_versions(self, account_id, clickwrap_id, **kwargs):
         """
         Deletes the versions specified by query parameter clickwrapVersionIds for a clickwrap, or all versions if no query parameter is specified. It will not delete if a version is active.
@@ -930,6 +815,7 @@ class AccountsApi(object):
 
     def get_agreement(self, account_id, agreement_id, clickwrap_id, **kwargs):
         """
+        Gets the agreement by a provided agreement ID
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -956,6 +842,7 @@ class AccountsApi(object):
 
     def get_agreement_with_http_info(self, account_id, agreement_id, clickwrap_id, **kwargs):
         """
+        Gets the agreement by a provided agreement ID
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1043,6 +930,7 @@ class AccountsApi(object):
 
     def get_agreement_pdf(self, account_id, agreement_id, clickwrap_id, **kwargs):
         """
+        Downloads the agreement PDF and optionally certificate of completion.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1056,7 +944,8 @@ class AccountsApi(object):
         :param str account_id: (required)
         :param str agreement_id: (required)
         :param str clickwrap_id: (required)
-        :return: None
+        :param str include_coc:
+        :return: file
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1069,6 +958,7 @@ class AccountsApi(object):
 
     def get_agreement_pdf_with_http_info(self, account_id, agreement_id, clickwrap_id, **kwargs):
         """
+        Downloads the agreement PDF and optionally certificate of completion.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1082,12 +972,13 @@ class AccountsApi(object):
         :param str account_id: (required)
         :param str agreement_id: (required)
         :param str clickwrap_id: (required)
-        :return: None
+        :param str include_coc:
+        :return: file
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['account_id', 'agreement_id', 'clickwrap_id']
+        all_params = ['account_id', 'agreement_id', 'clickwrap_id', 'include_coc']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1125,6 +1016,8 @@ class AccountsApi(object):
             path_params['clickwrapId'] = params['clickwrap_id']
 
         query_params = {}
+        if 'include_coc' in params:
+            query_params['include_coc'] = params['include_coc']
 
         header_params = {}
 
@@ -1134,7 +1027,7 @@ class AccountsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
+            select_header_accept(['application/pdf'])
 
         # Authentication setting
         auth_settings = []
@@ -1146,7 +1039,7 @@ class AccountsApi(object):
                                         body=body_params,
                                         post_params=form_params,
                                         files=local_var_files,
-                                        response_type=None,
+                                        response_type='file',
                                         auth_settings=auth_settings,
                                         callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
@@ -1264,7 +1157,7 @@ class AccountsApi(object):
 
     def get_clickwrap_agreements(self, account_id, clickwrap_id, **kwargs):
         """
-        Gets the Clickwraps for an account
+        Gets the agreement responses for a clickwrap
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1295,7 +1188,7 @@ class AccountsApi(object):
 
     def get_clickwrap_agreements_with_http_info(self, account_id, clickwrap_id, **kwargs):
         """
-        Gets the Clickwraps for an account
+        Gets the agreement responses for a clickwrap
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1640,256 +1533,6 @@ class AccountsApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def get_clickwrap_version_agreements_by_number(self, account_id, clickwrap_id, version_number, **kwargs):
-        """
-        Gets the agreement responses for a clickwrap version
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_clickwrap_version_agreements_by_number(account_id, clickwrap_id, version_number, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param str version_number: (required)
-        :param str client_user_id:
-        :param str from_date:
-        :param str page_number:
-        :param str status:
-        :param str to_date:
-        :return: ClickwrapAgreementsResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
-            return self.get_clickwrap_version_agreements_by_number_with_http_info(account_id, clickwrap_id, version_number, **kwargs)
-        else:
-            (data) = self.get_clickwrap_version_agreements_by_number_with_http_info(account_id, clickwrap_id, version_number, **kwargs)
-            return data
-
-    def get_clickwrap_version_agreements_by_number_with_http_info(self, account_id, clickwrap_id, version_number, **kwargs):
-        """
-        Gets the agreement responses for a clickwrap version
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_clickwrap_version_agreements_by_number_with_http_info(account_id, clickwrap_id, version_number, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param str version_number: (required)
-        :param str client_user_id:
-        :param str from_date:
-        :param str page_number:
-        :param str status:
-        :param str to_date:
-        :return: ClickwrapAgreementsResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['account_id', 'clickwrap_id', 'version_number', 'client_user_id', 'from_date', 'page_number', 'status', 'to_date']
-        all_params.append('callback')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_clickwrap_version_agreements_by_number" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'account_id' is set
-        if ('account_id' not in params) or (params['account_id'] is None):
-            raise ValueError("Missing the required parameter `account_id` when calling `get_clickwrap_version_agreements_by_number`")
-        # verify the required parameter 'clickwrap_id' is set
-        if ('clickwrap_id' not in params) or (params['clickwrap_id'] is None):
-            raise ValueError("Missing the required parameter `clickwrap_id` when calling `get_clickwrap_version_agreements_by_number`")
-        # verify the required parameter 'version_number' is set
-        if ('version_number' not in params) or (params['version_number'] is None):
-            raise ValueError("Missing the required parameter `version_number` when calling `get_clickwrap_version_agreements_by_number`")
-
-
-        collection_formats = {}
-
-        resource_path = '/v1/accounts/{accountId}/clickwraps/{clickwrapId}/versions/{versionNumber}/users'.replace('{format}', 'json')
-        path_params = {}
-        if 'account_id' in params:
-            path_params['accountId'] = params['account_id']
-        if 'clickwrap_id' in params:
-            path_params['clickwrapId'] = params['clickwrap_id']
-        if 'version_number' in params:
-            path_params['versionNumber'] = params['version_number']
-
-        query_params = {}
-        if 'client_user_id' in params:
-            query_params['client_user_id'] = params['client_user_id']
-        if 'from_date' in params:
-            query_params['from_date'] = params['from_date']
-        if 'page_number' in params:
-            query_params['page_number'] = params['page_number']
-        if 'status' in params:
-            query_params['status'] = params['status']
-        if 'to_date' in params:
-            query_params['to_date'] = params['to_date']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-
-        # Authentication setting
-        auth_settings = []
-
-        return self.api_client.call_api(resource_path, 'GET',
-                                        path_params,
-                                        query_params,
-                                        header_params,
-                                        body=body_params,
-                                        post_params=form_params,
-                                        files=local_var_files,
-                                        response_type='ClickwrapAgreementsResponse',
-                                        auth_settings=auth_settings,
-                                        callback=params.get('callback'),
-                                        _return_http_data_only=params.get('_return_http_data_only'),
-                                        _preload_content=params.get('_preload_content', True),
-                                        _request_timeout=params.get('_request_timeout'),
-                                        collection_formats=collection_formats)
-
-    def get_clickwrap_version_by_number(self, account_id, clickwrap_id, version_number, **kwargs):
-        """
-        Gets the Clickwrap version by clickwrapId and versionNumber for an account
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_clickwrap_version_by_number(account_id, clickwrap_id, version_number, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param str version_number: (required)
-        :return: ClickwrapVersionResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
-            return self.get_clickwrap_version_by_number_with_http_info(account_id, clickwrap_id, version_number, **kwargs)
-        else:
-            (data) = self.get_clickwrap_version_by_number_with_http_info(account_id, clickwrap_id, version_number, **kwargs)
-            return data
-
-    def get_clickwrap_version_by_number_with_http_info(self, account_id, clickwrap_id, version_number, **kwargs):
-        """
-        Gets the Clickwrap version by clickwrapId and versionNumber for an account
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_clickwrap_version_by_number_with_http_info(account_id, clickwrap_id, version_number, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param str version_number: (required)
-        :return: ClickwrapVersionResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['account_id', 'clickwrap_id', 'version_number']
-        all_params.append('callback')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_clickwrap_version_by_number" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'account_id' is set
-        if ('account_id' not in params) or (params['account_id'] is None):
-            raise ValueError("Missing the required parameter `account_id` when calling `get_clickwrap_version_by_number`")
-        # verify the required parameter 'clickwrap_id' is set
-        if ('clickwrap_id' not in params) or (params['clickwrap_id'] is None):
-            raise ValueError("Missing the required parameter `clickwrap_id` when calling `get_clickwrap_version_by_number`")
-        # verify the required parameter 'version_number' is set
-        if ('version_number' not in params) or (params['version_number'] is None):
-            raise ValueError("Missing the required parameter `version_number` when calling `get_clickwrap_version_by_number`")
-
-
-        collection_formats = {}
-
-        resource_path = '/v1/accounts/{accountId}/clickwraps/{clickwrapId}/versions/{versionNumber}'.replace('{format}', 'json')
-        path_params = {}
-        if 'account_id' in params:
-            path_params['accountId'] = params['account_id']
-        if 'clickwrap_id' in params:
-            path_params['clickwrapId'] = params['clickwrap_id']
-        if 'version_number' in params:
-            path_params['versionNumber'] = params['version_number']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-
-        # Authentication setting
-        auth_settings = []
-
-        return self.api_client.call_api(resource_path, 'GET',
-                                        path_params,
-                                        query_params,
-                                        header_params,
-                                        body=body_params,
-                                        post_params=form_params,
-                                        files=local_var_files,
-                                        response_type='ClickwrapVersionResponse',
-                                        auth_settings=auth_settings,
-                                        callback=params.get('callback'),
-                                        _return_http_data_only=params.get('_return_http_data_only'),
-                                        _preload_content=params.get('_preload_content', True),
-                                        _request_timeout=params.get('_request_timeout'),
-                                        collection_formats=collection_formats)
-
     def get_clickwrap_versions(self, account_id, clickwrap_id, **kwargs):
         """
         Gets all the versions of a clickwrap for an account
@@ -2012,10 +1655,11 @@ class AccountsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str account_id: (required)
+        :param str filter:
         :param str from_date:
+        :param str name:
         :param str owner_user_id:
         :param str page_number:
-        :param str shared:
         :param str status:
         :param str to_date:
         :return: ClickwrapVersionsResponse
@@ -2043,10 +1687,11 @@ class AccountsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str account_id: (required)
+        :param str filter:
         :param str from_date:
+        :param str name:
         :param str owner_user_id:
         :param str page_number:
-        :param str shared:
         :param str status:
         :param str to_date:
         :return: ClickwrapVersionsResponse
@@ -2054,7 +1699,7 @@ class AccountsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['account_id', 'from_date', 'owner_user_id', 'page_number', 'shared', 'status', 'to_date']
+        all_params = ['account_id', 'filter', 'from_date', 'name', 'owner_user_id', 'page_number', 'status', 'to_date']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2082,14 +1727,16 @@ class AccountsApi(object):
             path_params['accountId'] = params['account_id']
 
         query_params = {}
+        if 'filter' in params:
+            query_params['filter'] = params['filter']
         if 'from_date' in params:
             query_params['from_date'] = params['from_date']
+        if 'name' in params:
+            query_params['name'] = params['name']
         if 'owner_user_id' in params:
             query_params['ownerUserId'] = params['owner_user_id']
         if 'page_number' in params:
             query_params['page_number'] = params['page_number']
-        if 'shared' in params:
-            query_params['shared'] = params['shared']
         if 'status' in params:
             query_params['status'] = params['status']
         if 'to_date' in params:
@@ -2414,125 +2061,6 @@ class AccountsApi(object):
             path_params['clickwrapId'] = params['clickwrap_id']
         if 'version_id' in params:
             path_params['versionId'] = params['version_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'clickwrap_request' in params:
-            body_params = params['clickwrap_request']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-
-        # Authentication setting
-        auth_settings = []
-
-        return self.api_client.call_api(resource_path, 'PUT',
-                                        path_params,
-                                        query_params,
-                                        header_params,
-                                        body=body_params,
-                                        post_params=form_params,
-                                        files=local_var_files,
-                                        response_type='ClickwrapVersionSummaryResponse',
-                                        auth_settings=auth_settings,
-                                        callback=params.get('callback'),
-                                        _return_http_data_only=params.get('_return_http_data_only'),
-                                        _preload_content=params.get('_preload_content', True),
-                                        _request_timeout=params.get('_request_timeout'),
-                                        collection_formats=collection_formats)
-
-    def update_clickwrap_version_by_number(self, account_id, clickwrap_id, version_number, **kwargs):
-        """
-        Updates the clickwrap version specified by versionNumber. Use versionId instead of versionNumber
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.update_clickwrap_version_by_number(account_id, clickwrap_id, version_number, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param str version_number: (required)
-        :param ClickwrapRequest clickwrap_request:
-        :return: ClickwrapVersionSummaryResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
-            return self.update_clickwrap_version_by_number_with_http_info(account_id, clickwrap_id, version_number, **kwargs)
-        else:
-            (data) = self.update_clickwrap_version_by_number_with_http_info(account_id, clickwrap_id, version_number, **kwargs)
-            return data
-
-    def update_clickwrap_version_by_number_with_http_info(self, account_id, clickwrap_id, version_number, **kwargs):
-        """
-        Updates the clickwrap version specified by versionNumber. Use versionId instead of versionNumber
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.update_clickwrap_version_by_number_with_http_info(account_id, clickwrap_id, version_number, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param str version_number: (required)
-        :param ClickwrapRequest clickwrap_request:
-        :return: ClickwrapVersionSummaryResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['account_id', 'clickwrap_id', 'version_number', 'clickwrap_request']
-        all_params.append('callback')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method update_clickwrap_version_by_number" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'account_id' is set
-        if ('account_id' not in params) or (params['account_id'] is None):
-            raise ValueError("Missing the required parameter `account_id` when calling `update_clickwrap_version_by_number`")
-        # verify the required parameter 'clickwrap_id' is set
-        if ('clickwrap_id' not in params) or (params['clickwrap_id'] is None):
-            raise ValueError("Missing the required parameter `clickwrap_id` when calling `update_clickwrap_version_by_number`")
-        # verify the required parameter 'version_number' is set
-        if ('version_number' not in params) or (params['version_number'] is None):
-            raise ValueError("Missing the required parameter `version_number` when calling `update_clickwrap_version_by_number`")
-
-
-        collection_formats = {}
-
-        resource_path = '/v1/accounts/{accountId}/clickwraps/{clickwrapId}/versions/{versionNumber}'.replace('{format}', 'json')
-        path_params = {}
-        if 'account_id' in params:
-            path_params['accountId'] = params['account_id']
-        if 'clickwrap_id' in params:
-            path_params['clickwrapId'] = params['clickwrap_id']
-        if 'version_number' in params:
-            path_params['versionNumber'] = params['version_number']
 
         query_params = {}
 

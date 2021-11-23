@@ -11,10 +11,10 @@
 """
 
 
-from setuptools import setup, find_packages, Command, os  # noqa: H301
+from setuptools import setup, find_packages, Command, os  # noqa: H301	
 
 NAME = "docusign-click"
-VERSION = "1.0.0"
+VERSION = "1.1.0rc1"
 # To install the library, run the following
 #
 # python setup.py install
@@ -22,15 +22,7 @@ VERSION = "1.0.0"
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 
-REQUIRES = [
-    "certifi>=2017.4.17",
-    "python-dateutil>=2.1",
-    "six>=1.10",
-    "urllib3>=1.23",
-    "setuptools >= 21.0.0",
-    "PyJWT>=1.7.1,<2",
-    "nose>=1.3.7"
-]
+REQUIRES = ["urllib3 >= 1.15", "six >= 1.8.0", "certifi >= 14.05.14", "python-dateutil >= 2.5.3", "setuptools >= 21.0.0", "PyJWT>=1.7.1,<2", "cryptography>=2.5", "nose>=1.3.7"]
 
 class CleanCommand(Command):
     """Custom clean command to tidy up the project root."""
@@ -41,6 +33,11 @@ class CleanCommand(Command):
         pass
     def run(self):
         os.system('rm -vrf ./build ./dist ./*.pyc ./*.tgz ./*.egg-info')
+
+this_directory = os.path.abspath(os.path.dirname(__file__))
+with open(os.path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
+    
 
 setup(
     name=NAME,
@@ -55,7 +52,6 @@ setup(
     cmdclass={
         'clean': CleanCommand,
     },
-    long_description="""\
-    DocuSign Click lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable clickwrap solution in your DocuSign integrations.  # noqa: E501
-    """
+    long_description=long_description,
+    long_description_content_type='text/markdown'
 )
