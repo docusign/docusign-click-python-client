@@ -23,6 +23,12 @@ from .client.api_client import ApiClient
 from .client.configuration import Configuration
 from .client.api_exception import ApiException
 
+from .client.auth.oauth import OAuth	
+from .client.auth.oauth import OAuthToken	
+from .client.auth.oauth import Account	
+from .client.auth.oauth import Organization	
+from .client.auth.oauth import Link
+
 # import models into sdk package
 from docusign_click.models.clickwrap_agreements_response import ClickwrapAgreementsResponse
 from docusign_click.models.clickwrap_delete_response import ClickwrapDeleteResponse
@@ -39,11 +45,12 @@ from docusign_click.models.clickwrap_versions_response import ClickwrapVersionsR
 from docusign_click.models.clickwraps_delete_response import ClickwrapsDeleteResponse
 from docusign_click.models.display_settings import DisplaySettings
 from docusign_click.models.document import Document
+from docusign_click.models.document_data import DocumentData
 from docusign_click.models.error_details import ErrorDetails
 from docusign_click.models.service_information import ServiceInformation
 from docusign_click.models.service_version import ServiceVersion
 from docusign_click.models.user_agreement_request import UserAgreementRequest
 from docusign_click.models.user_agreement_response import UserAgreementResponse
 
-configuration = Configuration()
 
+configuration = Configuration()
