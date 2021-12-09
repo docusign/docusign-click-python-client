@@ -42,7 +42,6 @@ class UserAgreementResponse(object):
         'consumer_disclosure_html': 'str',
         'created_on': 'object',
         'declined_on': 'object',
-        'document_data': 'DocumentData',
         'documents': 'list[Document]',
         'metadata': 'str',
         'settings': 'DisplaySettings',
@@ -62,7 +61,6 @@ class UserAgreementResponse(object):
         'consumer_disclosure_html': 'consumerDisclosureHtml',
         'created_on': 'createdOn',
         'declined_on': 'declinedOn',
-        'document_data': 'documentData',
         'documents': 'documents',
         'metadata': 'metadata',
         'settings': 'settings',
@@ -87,7 +85,6 @@ class UserAgreementResponse(object):
         self._consumer_disclosure_html = None
         self._created_on = None
         self._declined_on = None
-        self._document_data = None
         self._documents = None
         self._metadata = None
         self._settings = None
@@ -106,7 +103,6 @@ class UserAgreementResponse(object):
         setattr(self, "_{}".format('consumer_disclosure_html'), kwargs.get('consumer_disclosure_html', None))
         setattr(self, "_{}".format('created_on'), kwargs.get('created_on', None))
         setattr(self, "_{}".format('declined_on'), kwargs.get('declined_on', None))
-        setattr(self, "_{}".format('document_data'), kwargs.get('document_data', None))
         setattr(self, "_{}".format('documents'), kwargs.get('documents', None))
         setattr(self, "_{}".format('metadata'), kwargs.get('metadata', None))
         setattr(self, "_{}".format('settings'), kwargs.get('settings', None))
@@ -321,27 +317,6 @@ class UserAgreementResponse(object):
         """
 
         self._declined_on = declined_on
-
-    @property
-    def document_data(self):
-        """Gets the document_data of this UserAgreementResponse.  # noqa: E501
-
-
-        :return: The document_data of this UserAgreementResponse.  # noqa: E501
-        :rtype: DocumentData
-        """
-        return self._document_data
-
-    @document_data.setter
-    def document_data(self, document_data):
-        """Sets the document_data of this UserAgreementResponse.
-
-
-        :param document_data: The document_data of this UserAgreementResponse.  # noqa: E501
-        :type: DocumentData
-        """
-
-        self._document_data = document_data
 
     @property
     def documents(self):

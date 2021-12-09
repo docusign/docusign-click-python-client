@@ -45,7 +45,6 @@ from docusign_click.models.clickwrap_versions_response import ClickwrapVersionsR
 from docusign_click.models.clickwraps_delete_response import ClickwrapsDeleteResponse
 from docusign_click.models.display_settings import DisplaySettings
 from docusign_click.models.document import Document
-from docusign_click.models.document_data import DocumentData
 from docusign_click.models.error_details import ErrorDetails
 from docusign_click.models.service_information import ServiceInformation
 from docusign_click.models.service_version import ServiceVersion
