@@ -34,13 +34,11 @@ class UserAgreementRequest(object):
     """
     swagger_types = {
         'client_user_id': 'str',
-        'document_data': 'DocumentData',
         'metadata': 'str'
     }
 
     attribute_map = {
         'client_user_id': 'clientUserId',
-        'document_data': 'documentData',
         'metadata': 'metadata'
     }
 
@@ -51,12 +49,10 @@ class UserAgreementRequest(object):
         self._configuration = _configuration
 
         self._client_user_id = None
-        self._document_data = None
         self._metadata = None
         self.discriminator = None
 
         setattr(self, "_{}".format('client_user_id'), kwargs.get('client_user_id', None))
-        setattr(self, "_{}".format('document_data'), kwargs.get('document_data', None))
         setattr(self, "_{}".format('metadata'), kwargs.get('metadata', None))
 
     @property
@@ -81,27 +77,6 @@ class UserAgreementRequest(object):
         """
 
         self._client_user_id = client_user_id
-
-    @property
-    def document_data(self):
-        """Gets the document_data of this UserAgreementRequest.  # noqa: E501
-
-
-        :return: The document_data of this UserAgreementRequest.  # noqa: E501
-        :rtype: DocumentData
-        """
-        return self._document_data
-
-    @document_data.setter
-    def document_data(self, document_data):
-        """Sets the document_data of this UserAgreementRequest.
-
-
-        :param document_data: The document_data of this UserAgreementRequest.  # noqa: E501
-        :type: DocumentData
-        """
-
-        self._document_data = document_data
 
     @property
     def metadata(self):
