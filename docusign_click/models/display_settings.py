@@ -49,7 +49,8 @@ class DisplaySettings(object):
         'must_view': 'bool',
         'record_decline_responses': 'bool',
         'require_accept': 'bool',
-        'send_to_email': 'bool'
+        'send_to_email': 'bool',
+        'statement_alignment': 'str'
     }
 
     attribute_map = {
@@ -69,7 +70,8 @@ class DisplaySettings(object):
         'must_view': 'mustView',
         'record_decline_responses': 'recordDeclineResponses',
         'require_accept': 'requireAccept',
-        'send_to_email': 'sendToEmail'
+        'send_to_email': 'sendToEmail',
+        'statement_alignment': 'statementAlignment'
     }
 
     def __init__(self, _configuration=None, **kwargs):  # noqa: E501
@@ -95,6 +97,7 @@ class DisplaySettings(object):
         self._record_decline_responses = None
         self._require_accept = None
         self._send_to_email = None
+        self._statement_alignment = None
         self.discriminator = None
 
         setattr(self, "_{}".format('action_button_alignment'), kwargs.get('action_button_alignment', None))
@@ -114,6 +117,7 @@ class DisplaySettings(object):
         setattr(self, "_{}".format('record_decline_responses'), kwargs.get('record_decline_responses', None))
         setattr(self, "_{}".format('require_accept'), kwargs.get('require_accept', None))
         setattr(self, "_{}".format('send_to_email'), kwargs.get('send_to_email', None))
+        setattr(self, "_{}".format('statement_alignment'), kwargs.get('statement_alignment', None))
 
     @property
     def action_button_alignment(self):
@@ -505,6 +509,29 @@ class DisplaySettings(object):
         """
 
         self._send_to_email = send_to_email
+
+    @property
+    def statement_alignment(self):
+        """Gets the statement_alignment of this DisplaySettings.  # noqa: E501
+
+          # noqa: E501
+
+        :return: The statement_alignment of this DisplaySettings.  # noqa: E501
+        :rtype: str
+        """
+        return self._statement_alignment
+
+    @statement_alignment.setter
+    def statement_alignment(self, statement_alignment):
+        """Sets the statement_alignment of this DisplaySettings.
+
+          # noqa: E501
+
+        :param statement_alignment: The statement_alignment of this DisplaySettings.  # noqa: E501
+        :type: str
+        """
+
+        self._statement_alignment = statement_alignment
 
     def to_dict(self):
         """Returns the model properties as a dict"""

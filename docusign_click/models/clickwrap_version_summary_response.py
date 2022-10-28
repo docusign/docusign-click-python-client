@@ -38,6 +38,7 @@ class ClickwrapVersionSummaryResponse(object):
         'clickwrap_name': 'str',
         'clickwrap_version_id': 'str',
         'created_time': 'object',
+        'data_fields': 'list[DataField]',
         'last_modified': 'object',
         'last_modified_by': 'str',
         'owner_user_id': 'str',
@@ -55,6 +56,7 @@ class ClickwrapVersionSummaryResponse(object):
         'clickwrap_name': 'clickwrapName',
         'clickwrap_version_id': 'clickwrapVersionId',
         'created_time': 'createdTime',
+        'data_fields': 'dataFields',
         'last_modified': 'lastModified',
         'last_modified_by': 'lastModifiedBy',
         'owner_user_id': 'ownerUserId',
@@ -77,6 +79,7 @@ class ClickwrapVersionSummaryResponse(object):
         self._clickwrap_name = None
         self._clickwrap_version_id = None
         self._created_time = None
+        self._data_fields = None
         self._last_modified = None
         self._last_modified_by = None
         self._owner_user_id = None
@@ -93,6 +96,7 @@ class ClickwrapVersionSummaryResponse(object):
         setattr(self, "_{}".format('clickwrap_name'), kwargs.get('clickwrap_name', None))
         setattr(self, "_{}".format('clickwrap_version_id'), kwargs.get('clickwrap_version_id', None))
         setattr(self, "_{}".format('created_time'), kwargs.get('created_time', None))
+        setattr(self, "_{}".format('data_fields'), kwargs.get('data_fields', None))
         setattr(self, "_{}".format('last_modified'), kwargs.get('last_modified', None))
         setattr(self, "_{}".format('last_modified_by'), kwargs.get('last_modified_by', None))
         setattr(self, "_{}".format('owner_user_id'), kwargs.get('owner_user_id', None))
@@ -217,6 +221,29 @@ class ClickwrapVersionSummaryResponse(object):
         """
 
         self._created_time = created_time
+
+    @property
+    def data_fields(self):
+        """Gets the data_fields of this ClickwrapVersionSummaryResponse.  # noqa: E501
+
+          # noqa: E501
+
+        :return: The data_fields of this ClickwrapVersionSummaryResponse.  # noqa: E501
+        :rtype: list[DataField]
+        """
+        return self._data_fields
+
+    @data_fields.setter
+    def data_fields(self, data_fields):
+        """Sets the data_fields of this ClickwrapVersionSummaryResponse.
+
+          # noqa: E501
+
+        :param data_fields: The data_fields of this ClickwrapVersionSummaryResponse.  # noqa: E501
+        :type: list[DataField]
+        """
+
+        self._data_fields = data_fields
 
     @property
     def last_modified(self):

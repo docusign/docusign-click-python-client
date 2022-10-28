@@ -43,6 +43,7 @@ from docusign_click.models.clickwrap_versions_delete_response import ClickwrapVe
 from docusign_click.models.clickwrap_versions_paged_response import ClickwrapVersionsPagedResponse
 from docusign_click.models.clickwrap_versions_response import ClickwrapVersionsResponse
 from docusign_click.models.clickwraps_delete_response import ClickwrapsDeleteResponse
+from docusign_click.models.data_field import DataField
 from docusign_click.models.display_settings import DisplaySettings
 from docusign_click.models.document import Document
 from docusign_click.models.error_details import ErrorDetails
