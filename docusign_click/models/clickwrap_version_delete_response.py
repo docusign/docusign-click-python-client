@@ -35,6 +35,7 @@ class ClickwrapVersionDeleteResponse(object):
     swagger_types = {
         'clickwrap_version_id': 'str',
         'created_time': 'object',
+        'data_fields': 'list[DataField]',
         'deletion_message': 'str',
         'deletion_success': 'bool',
         'last_modified': 'object',
@@ -51,6 +52,7 @@ class ClickwrapVersionDeleteResponse(object):
     attribute_map = {
         'clickwrap_version_id': 'clickwrapVersionId',
         'created_time': 'createdTime',
+        'data_fields': 'dataFields',
         'deletion_message': 'deletionMessage',
         'deletion_success': 'deletionSuccess',
         'last_modified': 'lastModified',
@@ -72,6 +74,7 @@ class ClickwrapVersionDeleteResponse(object):
 
         self._clickwrap_version_id = None
         self._created_time = None
+        self._data_fields = None
         self._deletion_message = None
         self._deletion_success = None
         self._last_modified = None
@@ -87,6 +90,7 @@ class ClickwrapVersionDeleteResponse(object):
 
         setattr(self, "_{}".format('clickwrap_version_id'), kwargs.get('clickwrap_version_id', None))
         setattr(self, "_{}".format('created_time'), kwargs.get('created_time', None))
+        setattr(self, "_{}".format('data_fields'), kwargs.get('data_fields', None))
         setattr(self, "_{}".format('deletion_message'), kwargs.get('deletion_message', None))
         setattr(self, "_{}".format('deletion_success'), kwargs.get('deletion_success', None))
         setattr(self, "_{}".format('last_modified'), kwargs.get('last_modified', None))
@@ -144,6 +148,29 @@ class ClickwrapVersionDeleteResponse(object):
         """
 
         self._created_time = created_time
+
+    @property
+    def data_fields(self):
+        """Gets the data_fields of this ClickwrapVersionDeleteResponse.  # noqa: E501
+
+          # noqa: E501
+
+        :return: The data_fields of this ClickwrapVersionDeleteResponse.  # noqa: E501
+        :rtype: list[DataField]
+        """
+        return self._data_fields
+
+    @data_fields.setter
+    def data_fields(self, data_fields):
+        """Sets the data_fields of this ClickwrapVersionDeleteResponse.
+
+          # noqa: E501
+
+        :param data_fields: The data_fields of this ClickwrapVersionDeleteResponse.  # noqa: E501
+        :type: list[DataField]
+        """
+
+        self._data_fields = data_fields
 
     @property
     def deletion_message(self):

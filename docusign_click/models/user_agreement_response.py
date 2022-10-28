@@ -39,13 +39,16 @@ class UserAgreementResponse(object):
         'agreement_url': 'str',
         'clickwrap_id': 'str',
         'client_user_id': 'str',
+        'consumer_disclosure_enabled': 'bool',
         'consumer_disclosure_html': 'str',
         'created_on': 'object',
         'declined_on': 'object',
+        'document_data': 'dict(str, str)',
         'documents': 'list[Document]',
         'metadata': 'str',
         'settings': 'DisplaySettings',
         'status': 'str',
+        'style': 'dict(str, str)',
         'version': 'str',
         'version_id': 'str',
         'version_number': 'int'
@@ -58,13 +61,16 @@ class UserAgreementResponse(object):
         'agreement_url': 'agreementUrl',
         'clickwrap_id': 'clickwrapId',
         'client_user_id': 'clientUserId',
+        'consumer_disclosure_enabled': 'consumerDisclosureEnabled',
         'consumer_disclosure_html': 'consumerDisclosureHtml',
         'created_on': 'createdOn',
         'declined_on': 'declinedOn',
+        'document_data': 'documentData',
         'documents': 'documents',
         'metadata': 'metadata',
         'settings': 'settings',
         'status': 'status',
+        'style': 'style',
         'version': 'version',
         'version_id': 'versionId',
         'version_number': 'versionNumber'
@@ -82,13 +88,16 @@ class UserAgreementResponse(object):
         self._agreement_url = None
         self._clickwrap_id = None
         self._client_user_id = None
+        self._consumer_disclosure_enabled = None
         self._consumer_disclosure_html = None
         self._created_on = None
         self._declined_on = None
+        self._document_data = None
         self._documents = None
         self._metadata = None
         self._settings = None
         self._status = None
+        self._style = None
         self._version = None
         self._version_id = None
         self._version_number = None
@@ -100,13 +109,16 @@ class UserAgreementResponse(object):
         setattr(self, "_{}".format('agreement_url'), kwargs.get('agreement_url', None))
         setattr(self, "_{}".format('clickwrap_id'), kwargs.get('clickwrap_id', None))
         setattr(self, "_{}".format('client_user_id'), kwargs.get('client_user_id', None))
+        setattr(self, "_{}".format('consumer_disclosure_enabled'), kwargs.get('consumer_disclosure_enabled', None))
         setattr(self, "_{}".format('consumer_disclosure_html'), kwargs.get('consumer_disclosure_html', None))
         setattr(self, "_{}".format('created_on'), kwargs.get('created_on', None))
         setattr(self, "_{}".format('declined_on'), kwargs.get('declined_on', None))
+        setattr(self, "_{}".format('document_data'), kwargs.get('document_data', None))
         setattr(self, "_{}".format('documents'), kwargs.get('documents', None))
         setattr(self, "_{}".format('metadata'), kwargs.get('metadata', None))
         setattr(self, "_{}".format('settings'), kwargs.get('settings', None))
         setattr(self, "_{}".format('status'), kwargs.get('status', None))
+        setattr(self, "_{}".format('style'), kwargs.get('style', None))
         setattr(self, "_{}".format('version'), kwargs.get('version', None))
         setattr(self, "_{}".format('version_id'), kwargs.get('version_id', None))
         setattr(self, "_{}".format('version_number'), kwargs.get('version_number', None))
@@ -250,6 +262,29 @@ class UserAgreementResponse(object):
         self._client_user_id = client_user_id
 
     @property
+    def consumer_disclosure_enabled(self):
+        """Gets the consumer_disclosure_enabled of this UserAgreementResponse.  # noqa: E501
+
+          # noqa: E501
+
+        :return: The consumer_disclosure_enabled of this UserAgreementResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._consumer_disclosure_enabled
+
+    @consumer_disclosure_enabled.setter
+    def consumer_disclosure_enabled(self, consumer_disclosure_enabled):
+        """Sets the consumer_disclosure_enabled of this UserAgreementResponse.
+
+          # noqa: E501
+
+        :param consumer_disclosure_enabled: The consumer_disclosure_enabled of this UserAgreementResponse.  # noqa: E501
+        :type: bool
+        """
+
+        self._consumer_disclosure_enabled = consumer_disclosure_enabled
+
+    @property
     def consumer_disclosure_html(self):
         """Gets the consumer_disclosure_html of this UserAgreementResponse.  # noqa: E501
 
@@ -317,6 +352,29 @@ class UserAgreementResponse(object):
         """
 
         self._declined_on = declined_on
+
+    @property
+    def document_data(self):
+        """Gets the document_data of this UserAgreementResponse.  # noqa: E501
+
+          # noqa: E501
+
+        :return: The document_data of this UserAgreementResponse.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._document_data
+
+    @document_data.setter
+    def document_data(self, document_data):
+        """Sets the document_data of this UserAgreementResponse.
+
+          # noqa: E501
+
+        :param document_data: The document_data of this UserAgreementResponse.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._document_data = document_data
 
     @property
     def documents(self):
@@ -407,6 +465,29 @@ class UserAgreementResponse(object):
         """
 
         self._status = status
+
+    @property
+    def style(self):
+        """Gets the style of this UserAgreementResponse.  # noqa: E501
+
+          # noqa: E501
+
+        :return: The style of this UserAgreementResponse.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._style
+
+    @style.setter
+    def style(self, style):
+        """Sets the style of this UserAgreementResponse.
+
+          # noqa: E501
+
+        :param style: The style of this UserAgreementResponse.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._style = style
 
     @property
     def version(self):

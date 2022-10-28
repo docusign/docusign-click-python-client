@@ -34,17 +34,23 @@ class Document(object):
     """
     swagger_types = {
         'document_base64': 'str',
+        'document_display': 'str',
         'document_html': 'str',
         'document_name': 'str',
         'file_extension': 'str',
+        'must_read': 'bool',
+        'must_view': 'bool',
         'order': 'int'
     }
 
     attribute_map = {
         'document_base64': 'documentBase64',
+        'document_display': 'documentDisplay',
         'document_html': 'documentHtml',
         'document_name': 'documentName',
         'file_extension': 'fileExtension',
+        'must_read': 'mustRead',
+        'must_view': 'mustView',
         'order': 'order'
     }
 
@@ -55,16 +61,22 @@ class Document(object):
         self._configuration = _configuration
 
         self._document_base64 = None
+        self._document_display = None
         self._document_html = None
         self._document_name = None
         self._file_extension = None
+        self._must_read = None
+        self._must_view = None
         self._order = None
         self.discriminator = None
 
         setattr(self, "_{}".format('document_base64'), kwargs.get('document_base64', None))
+        setattr(self, "_{}".format('document_display'), kwargs.get('document_display', None))
         setattr(self, "_{}".format('document_html'), kwargs.get('document_html', None))
         setattr(self, "_{}".format('document_name'), kwargs.get('document_name', None))
         setattr(self, "_{}".format('file_extension'), kwargs.get('file_extension', None))
+        setattr(self, "_{}".format('must_read'), kwargs.get('must_read', None))
+        setattr(self, "_{}".format('must_view'), kwargs.get('must_view', None))
         setattr(self, "_{}".format('order'), kwargs.get('order', None))
 
     @property
@@ -89,6 +101,29 @@ class Document(object):
         """
 
         self._document_base64 = document_base64
+
+    @property
+    def document_display(self):
+        """Gets the document_display of this Document.  # noqa: E501
+
+          # noqa: E501
+
+        :return: The document_display of this Document.  # noqa: E501
+        :rtype: str
+        """
+        return self._document_display
+
+    @document_display.setter
+    def document_display(self, document_display):
+        """Sets the document_display of this Document.
+
+          # noqa: E501
+
+        :param document_display: The document_display of this Document.  # noqa: E501
+        :type: str
+        """
+
+        self._document_display = document_display
 
     @property
     def document_html(self):
@@ -158,6 +193,52 @@ class Document(object):
         """
 
         self._file_extension = file_extension
+
+    @property
+    def must_read(self):
+        """Gets the must_read of this Document.  # noqa: E501
+
+          # noqa: E501
+
+        :return: The must_read of this Document.  # noqa: E501
+        :rtype: bool
+        """
+        return self._must_read
+
+    @must_read.setter
+    def must_read(self, must_read):
+        """Sets the must_read of this Document.
+
+          # noqa: E501
+
+        :param must_read: The must_read of this Document.  # noqa: E501
+        :type: bool
+        """
+
+        self._must_read = must_read
+
+    @property
+    def must_view(self):
+        """Gets the must_view of this Document.  # noqa: E501
+
+          # noqa: E501
+
+        :return: The must_view of this Document.  # noqa: E501
+        :rtype: bool
+        """
+        return self._must_view
+
+    @must_view.setter
+    def must_view(self, must_view):
+        """Sets the must_view of this Document.
+
+          # noqa: E501
+
+        :param must_view: The must_view of this Document.  # noqa: E501
+        :type: bool
+        """
+
+        self._must_view = must_view
 
     @property
     def order(self):

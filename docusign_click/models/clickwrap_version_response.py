@@ -38,6 +38,7 @@ class ClickwrapVersionResponse(object):
         'clickwrap_name': 'str',
         'clickwrap_version_id': 'str',
         'created_time': 'object',
+        'data_fields': 'list[DataField]',
         'display_settings': 'DisplaySettings',
         'documents': 'list[Document]',
         'last_modified': 'object',
@@ -57,6 +58,7 @@ class ClickwrapVersionResponse(object):
         'clickwrap_name': 'clickwrapName',
         'clickwrap_version_id': 'clickwrapVersionId',
         'created_time': 'createdTime',
+        'data_fields': 'dataFields',
         'display_settings': 'displaySettings',
         'documents': 'documents',
         'last_modified': 'lastModified',
@@ -81,6 +83,7 @@ class ClickwrapVersionResponse(object):
         self._clickwrap_name = None
         self._clickwrap_version_id = None
         self._created_time = None
+        self._data_fields = None
         self._display_settings = None
         self._documents = None
         self._last_modified = None
@@ -99,6 +102,7 @@ class ClickwrapVersionResponse(object):
         setattr(self, "_{}".format('clickwrap_name'), kwargs.get('clickwrap_name', None))
         setattr(self, "_{}".format('clickwrap_version_id'), kwargs.get('clickwrap_version_id', None))
         setattr(self, "_{}".format('created_time'), kwargs.get('created_time', None))
+        setattr(self, "_{}".format('data_fields'), kwargs.get('data_fields', None))
         setattr(self, "_{}".format('display_settings'), kwargs.get('display_settings', None))
         setattr(self, "_{}".format('documents'), kwargs.get('documents', None))
         setattr(self, "_{}".format('last_modified'), kwargs.get('last_modified', None))
@@ -225,6 +229,29 @@ class ClickwrapVersionResponse(object):
         """
 
         self._created_time = created_time
+
+    @property
+    def data_fields(self):
+        """Gets the data_fields of this ClickwrapVersionResponse.  # noqa: E501
+
+          # noqa: E501
+
+        :return: The data_fields of this ClickwrapVersionResponse.  # noqa: E501
+        :rtype: list[DataField]
+        """
+        return self._data_fields
+
+    @data_fields.setter
+    def data_fields(self, data_fields):
+        """Sets the data_fields of this ClickwrapVersionResponse.
+
+          # noqa: E501
+
+        :param data_fields: The data_fields of this ClickwrapVersionResponse.  # noqa: E501
+        :type: list[DataField]
+        """
+
+        self._data_fields = data_fields
 
     @property
     def display_settings(self):

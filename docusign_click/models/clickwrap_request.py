@@ -34,6 +34,7 @@ class ClickwrapRequest(object):
     """
     swagger_types = {
         'clickwrap_name': 'str',
+        'data_fields': 'list[DataField]',
         'display_settings': 'DisplaySettings',
         'documents': 'list[Document]',
         'fields_to_null': 'str',
@@ -43,13 +44,14 @@ class ClickwrapRequest(object):
         'require_reacceptance': 'bool',
         'scheduled_date': 'object',
         'scheduled_reacceptance': 'ClickwrapScheduledReacceptance',
-        'status': 'object',
+        'status': 'str',
         'transfer_from_user_id': 'str',
         'transfer_to_user_id': 'str'
     }
 
     attribute_map = {
         'clickwrap_name': 'clickwrapName',
+        'data_fields': 'dataFields',
         'display_settings': 'displaySettings',
         'documents': 'documents',
         'fields_to_null': 'fieldsToNull',
@@ -71,6 +73,7 @@ class ClickwrapRequest(object):
         self._configuration = _configuration
 
         self._clickwrap_name = None
+        self._data_fields = None
         self._display_settings = None
         self._documents = None
         self._fields_to_null = None
@@ -86,6 +89,7 @@ class ClickwrapRequest(object):
         self.discriminator = None
 
         setattr(self, "_{}".format('clickwrap_name'), kwargs.get('clickwrap_name', None))
+        setattr(self, "_{}".format('data_fields'), kwargs.get('data_fields', None))
         setattr(self, "_{}".format('display_settings'), kwargs.get('display_settings', None))
         setattr(self, "_{}".format('documents'), kwargs.get('documents', None))
         setattr(self, "_{}".format('fields_to_null'), kwargs.get('fields_to_null', None))
@@ -121,6 +125,29 @@ class ClickwrapRequest(object):
         """
 
         self._clickwrap_name = clickwrap_name
+
+    @property
+    def data_fields(self):
+        """Gets the data_fields of this ClickwrapRequest.  # noqa: E501
+
+          # noqa: E501
+
+        :return: The data_fields of this ClickwrapRequest.  # noqa: E501
+        :rtype: list[DataField]
+        """
+        return self._data_fields
+
+    @data_fields.setter
+    def data_fields(self, data_fields):
+        """Sets the data_fields of this ClickwrapRequest.
+
+          # noqa: E501
+
+        :param data_fields: The data_fields of this ClickwrapRequest.  # noqa: E501
+        :type: list[DataField]
+        """
+
+        self._data_fields = data_fields
 
     @property
     def display_settings(self):
@@ -332,7 +359,7 @@ class ClickwrapRequest(object):
           # noqa: E501
 
         :return: The status of this ClickwrapRequest.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._status
 
@@ -343,7 +370,7 @@ class ClickwrapRequest(object):
           # noqa: E501
 
         :param status: The status of this ClickwrapRequest.  # noqa: E501
-        :type: object
+        :type: str
         """
 
         self._status = status
