@@ -42,13 +42,15 @@ class UserAgreementResponse(object):
         'consumer_disclosure_enabled': 'bool',
         'consumer_disclosure_html': 'str',
         'created_on': 'object',
+        'data_fields': 'list[DataField]',
         'declined_on': 'object',
-        'document_data': 'dict(str, str)',
+        'document_data': 'dict(str, object)',
         'documents': 'list[Document]',
         'metadata': 'str',
+        'return_url': 'str',
         'settings': 'DisplaySettings',
         'status': 'str',
-        'style': 'dict(str, str)',
+        'style': 'dict(str, object)',
         'version': 'str',
         'version_id': 'str',
         'version_number': 'int'
@@ -64,10 +66,12 @@ class UserAgreementResponse(object):
         'consumer_disclosure_enabled': 'consumerDisclosureEnabled',
         'consumer_disclosure_html': 'consumerDisclosureHtml',
         'created_on': 'createdOn',
+        'data_fields': 'dataFields',
         'declined_on': 'declinedOn',
         'document_data': 'documentData',
         'documents': 'documents',
         'metadata': 'metadata',
+        'return_url': 'returnUrl',
         'settings': 'settings',
         'status': 'status',
         'style': 'style',
@@ -91,10 +95,12 @@ class UserAgreementResponse(object):
         self._consumer_disclosure_enabled = None
         self._consumer_disclosure_html = None
         self._created_on = None
+        self._data_fields = None
         self._declined_on = None
         self._document_data = None
         self._documents = None
         self._metadata = None
+        self._return_url = None
         self._settings = None
         self._status = None
         self._style = None
@@ -112,10 +118,12 @@ class UserAgreementResponse(object):
         setattr(self, "_{}".format('consumer_disclosure_enabled'), kwargs.get('consumer_disclosure_enabled', None))
         setattr(self, "_{}".format('consumer_disclosure_html'), kwargs.get('consumer_disclosure_html', None))
         setattr(self, "_{}".format('created_on'), kwargs.get('created_on', None))
+        setattr(self, "_{}".format('data_fields'), kwargs.get('data_fields', None))
         setattr(self, "_{}".format('declined_on'), kwargs.get('declined_on', None))
         setattr(self, "_{}".format('document_data'), kwargs.get('document_data', None))
         setattr(self, "_{}".format('documents'), kwargs.get('documents', None))
         setattr(self, "_{}".format('metadata'), kwargs.get('metadata', None))
+        setattr(self, "_{}".format('return_url'), kwargs.get('return_url', None))
         setattr(self, "_{}".format('settings'), kwargs.get('settings', None))
         setattr(self, "_{}".format('status'), kwargs.get('status', None))
         setattr(self, "_{}".format('style'), kwargs.get('style', None))
@@ -127,7 +135,7 @@ class UserAgreementResponse(object):
     def account_id(self):
         """Gets the account_id of this UserAgreementResponse.  # noqa: E501
 
-          # noqa: E501
+        The external account number (int) or account ID GUID.  # noqa: E501
 
         :return: The account_id of this UserAgreementResponse.  # noqa: E501
         :rtype: str
@@ -138,7 +146,7 @@ class UserAgreementResponse(object):
     def account_id(self, account_id):
         """Sets the account_id of this UserAgreementResponse.
 
-          # noqa: E501
+        The external account number (int) or account ID GUID.  # noqa: E501
 
         :param account_id: The account_id of this UserAgreementResponse.  # noqa: E501
         :type: str
@@ -150,7 +158,7 @@ class UserAgreementResponse(object):
     def agreed_on(self):
         """Gets the agreed_on of this UserAgreementResponse.  # noqa: E501
 
-          # noqa: E501
+        Date that the client last completed the agreement.  This property is null if `agreementUrl` is not null and `status` is not  `agreed`.  # noqa: E501
 
         :return: The agreed_on of this UserAgreementResponse.  # noqa: E501
         :rtype: object
@@ -161,7 +169,7 @@ class UserAgreementResponse(object):
     def agreed_on(self, agreed_on):
         """Sets the agreed_on of this UserAgreementResponse.
 
-          # noqa: E501
+        Date that the client last completed the agreement.  This property is null if `agreementUrl` is not null and `status` is not  `agreed`.  # noqa: E501
 
         :param agreed_on: The agreed_on of this UserAgreementResponse.  # noqa: E501
         :type: object
@@ -173,7 +181,7 @@ class UserAgreementResponse(object):
     def agreement_id(self):
         """Gets the agreement_id of this UserAgreementResponse.  # noqa: E501
 
-          # noqa: E501
+        The agreement ID.  # noqa: E501
 
         :return: The agreement_id of this UserAgreementResponse.  # noqa: E501
         :rtype: str
@@ -184,7 +192,7 @@ class UserAgreementResponse(object):
     def agreement_id(self, agreement_id):
         """Sets the agreement_id of this UserAgreementResponse.
 
-          # noqa: E501
+        The agreement ID.  # noqa: E501
 
         :param agreement_id: The agreement_id of this UserAgreementResponse.  # noqa: E501
         :type: str
@@ -196,7 +204,7 @@ class UserAgreementResponse(object):
     def agreement_url(self):
         """Gets the agreement_url of this UserAgreementResponse.  # noqa: E501
 
-          # noqa: E501
+        When not null, an agreement is required for user specified by  `clientUserId`.  When missing the user specified by `clientUserId` has already agreed and does not require a new acceptance.  Use this URL to render the agreement in a web page.  <!-- or redirected to when providing redirect_url as a query parameter. -->   # noqa: E501
 
         :return: The agreement_url of this UserAgreementResponse.  # noqa: E501
         :rtype: str
@@ -207,7 +215,7 @@ class UserAgreementResponse(object):
     def agreement_url(self, agreement_url):
         """Sets the agreement_url of this UserAgreementResponse.
 
-          # noqa: E501
+        When not null, an agreement is required for user specified by  `clientUserId`.  When missing the user specified by `clientUserId` has already agreed and does not require a new acceptance.  Use this URL to render the agreement in a web page.  <!-- or redirected to when providing redirect_url as a query parameter. -->   # noqa: E501
 
         :param agreement_url: The agreement_url of this UserAgreementResponse.  # noqa: E501
         :type: str
@@ -219,7 +227,7 @@ class UserAgreementResponse(object):
     def clickwrap_id(self):
         """Gets the clickwrap_id of this UserAgreementResponse.  # noqa: E501
 
-          # noqa: E501
+        The ID of the clickwrap.  # noqa: E501
 
         :return: The clickwrap_id of this UserAgreementResponse.  # noqa: E501
         :rtype: str
@@ -230,7 +238,7 @@ class UserAgreementResponse(object):
     def clickwrap_id(self, clickwrap_id):
         """Sets the clickwrap_id of this UserAgreementResponse.
 
-          # noqa: E501
+        The ID of the clickwrap.  # noqa: E501
 
         :param clickwrap_id: The clickwrap_id of this UserAgreementResponse.  # noqa: E501
         :type: str
@@ -242,7 +250,7 @@ class UserAgreementResponse(object):
     def client_user_id(self):
         """Gets the client_user_id of this UserAgreementResponse.  # noqa: E501
 
-          # noqa: E501
+        A unique value that identifies a user.\\nYou can use anything that your system uses\\nto identify unique users, such as\\nemployee IDs, email addresses, and surrogate keys as the value of `clientUserId`.\\n\\nA clickwrap with a specific `clientUserId` will not appear again\\nonce it has been accepted.\\n\"  # noqa: E501
 
         :return: The client_user_id of this UserAgreementResponse.  # noqa: E501
         :rtype: str
@@ -253,7 +261,7 @@ class UserAgreementResponse(object):
     def client_user_id(self, client_user_id):
         """Sets the client_user_id of this UserAgreementResponse.
 
-          # noqa: E501
+        A unique value that identifies a user.\\nYou can use anything that your system uses\\nto identify unique users, such as\\nemployee IDs, email addresses, and surrogate keys as the value of `clientUserId`.\\n\\nA clickwrap with a specific `clientUserId` will not appear again\\nonce it has been accepted.\\n\"  # noqa: E501
 
         :param client_user_id: The client_user_id of this UserAgreementResponse.  # noqa: E501
         :type: str
@@ -265,7 +273,7 @@ class UserAgreementResponse(object):
     def consumer_disclosure_enabled(self):
         """Gets the consumer_disclosure_enabled of this UserAgreementResponse.  # noqa: E501
 
-          # noqa: E501
+        **True** if consumer disclosure was required by this agreement.  # noqa: E501
 
         :return: The consumer_disclosure_enabled of this UserAgreementResponse.  # noqa: E501
         :rtype: bool
@@ -276,7 +284,7 @@ class UserAgreementResponse(object):
     def consumer_disclosure_enabled(self, consumer_disclosure_enabled):
         """Sets the consumer_disclosure_enabled of this UserAgreementResponse.
 
-          # noqa: E501
+        **True** if consumer disclosure was required by this agreement.  # noqa: E501
 
         :param consumer_disclosure_enabled: The consumer_disclosure_enabled of this UserAgreementResponse.  # noqa: E501
         :type: bool
@@ -288,7 +296,7 @@ class UserAgreementResponse(object):
     def consumer_disclosure_html(self):
         """Gets the consumer_disclosure_html of this UserAgreementResponse.  # noqa: E501
 
-          # noqa: E501
+        The customer-branded HTML with the Electronic Record and Signature Disclosure information  # noqa: E501
 
         :return: The consumer_disclosure_html of this UserAgreementResponse.  # noqa: E501
         :rtype: str
@@ -299,7 +307,7 @@ class UserAgreementResponse(object):
     def consumer_disclosure_html(self, consumer_disclosure_html):
         """Sets the consumer_disclosure_html of this UserAgreementResponse.
 
-          # noqa: E501
+        The customer-branded HTML with the Electronic Record and Signature Disclosure information  # noqa: E501
 
         :param consumer_disclosure_html: The consumer_disclosure_html of this UserAgreementResponse.  # noqa: E501
         :type: str
@@ -311,7 +319,7 @@ class UserAgreementResponse(object):
     def created_on(self):
         """Gets the created_on of this UserAgreementResponse.  # noqa: E501
 
-          # noqa: E501
+        The date when the clickwrap was created. May be null.  # noqa: E501
 
         :return: The created_on of this UserAgreementResponse.  # noqa: E501
         :rtype: object
@@ -322,7 +330,7 @@ class UserAgreementResponse(object):
     def created_on(self, created_on):
         """Sets the created_on of this UserAgreementResponse.
 
-          # noqa: E501
+        The date when the clickwrap was created. May be null.  # noqa: E501
 
         :param created_on: The created_on of this UserAgreementResponse.  # noqa: E501
         :type: object
@@ -331,10 +339,33 @@ class UserAgreementResponse(object):
         self._created_on = created_on
 
     @property
+    def data_fields(self):
+        """Gets the data_fields of this UserAgreementResponse.  # noqa: E501
+
+        The list of all the data fields available for the clickwrap (custom fields and standard fields).  # noqa: E501
+
+        :return: The data_fields of this UserAgreementResponse.  # noqa: E501
+        :rtype: list[DataField]
+        """
+        return self._data_fields
+
+    @data_fields.setter
+    def data_fields(self, data_fields):
+        """Sets the data_fields of this UserAgreementResponse.
+
+        The list of all the data fields available for the clickwrap (custom fields and standard fields).  # noqa: E501
+
+        :param data_fields: The data_fields of this UserAgreementResponse.  # noqa: E501
+        :type: list[DataField]
+        """
+
+        self._data_fields = data_fields
+
+    @property
     def declined_on(self):
         """Gets the declined_on of this UserAgreementResponse.  # noqa: E501
 
-          # noqa: E501
+        The date when the user declined the most recent required agreement.  This property is valid only when `status` is `declined`. Otherwise it is null.  # noqa: E501
 
         :return: The declined_on of this UserAgreementResponse.  # noqa: E501
         :rtype: object
@@ -345,7 +376,7 @@ class UserAgreementResponse(object):
     def declined_on(self, declined_on):
         """Sets the declined_on of this UserAgreementResponse.
 
-          # noqa: E501
+        The date when the user declined the most recent required agreement.  This property is valid only when `status` is `declined`. Otherwise it is null.  # noqa: E501
 
         :param declined_on: The declined_on of this UserAgreementResponse.  # noqa: E501
         :type: object
@@ -357,10 +388,10 @@ class UserAgreementResponse(object):
     def document_data(self):
         """Gets the document_data of this UserAgreementResponse.  # noqa: E501
 
-          # noqa: E501
+        This property specifies the data used to create a clickwrap with [dynamic content][].    [dynamic content]: /docs/click-api/click101/customize-clickwrap-fields/#embed-clickwraps-that-contain-dynamic-content   # noqa: E501
 
         :return: The document_data of this UserAgreementResponse.  # noqa: E501
-        :rtype: dict(str, str)
+        :rtype: dict(str, object)
         """
         return self._document_data
 
@@ -368,10 +399,10 @@ class UserAgreementResponse(object):
     def document_data(self, document_data):
         """Sets the document_data of this UserAgreementResponse.
 
-          # noqa: E501
+        This property specifies the data used to create a clickwrap with [dynamic content][].    [dynamic content]: /docs/click-api/click101/customize-clickwrap-fields/#embed-clickwraps-that-contain-dynamic-content   # noqa: E501
 
         :param document_data: The document_data of this UserAgreementResponse.  # noqa: E501
-        :type: dict(str, str)
+        :type: dict(str, object)
         """
 
         self._document_data = document_data
@@ -380,7 +411,7 @@ class UserAgreementResponse(object):
     def documents(self):
         """Gets the documents of this UserAgreementResponse.  # noqa: E501
 
-          # noqa: E501
+        An array of documents.  # noqa: E501
 
         :return: The documents of this UserAgreementResponse.  # noqa: E501
         :rtype: list[Document]
@@ -391,7 +422,7 @@ class UserAgreementResponse(object):
     def documents(self, documents):
         """Sets the documents of this UserAgreementResponse.
 
-          # noqa: E501
+        An array of documents.  # noqa: E501
 
         :param documents: The documents of this UserAgreementResponse.  # noqa: E501
         :type: list[Document]
@@ -403,7 +434,7 @@ class UserAgreementResponse(object):
     def metadata(self):
         """Gets the metadata of this UserAgreementResponse.  # noqa: E501
 
-          # noqa: E501
+        A customer-defined string you can use in requests. This string will appear in the corresponding response.  # noqa: E501
 
         :return: The metadata of this UserAgreementResponse.  # noqa: E501
         :rtype: str
@@ -414,7 +445,7 @@ class UserAgreementResponse(object):
     def metadata(self, metadata):
         """Sets the metadata of this UserAgreementResponse.
 
-          # noqa: E501
+        A customer-defined string you can use in requests. This string will appear in the corresponding response.  # noqa: E501
 
         :param metadata: The metadata of this UserAgreementResponse.  # noqa: E501
         :type: str
@@ -423,9 +454,33 @@ class UserAgreementResponse(object):
         self._metadata = metadata
 
     @property
+    def return_url(self):
+        """Gets the return_url of this UserAgreementResponse.  # noqa: E501
+
+        The URL redirected to after the agreement was completed.  # noqa: E501
+
+        :return: The return_url of this UserAgreementResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._return_url
+
+    @return_url.setter
+    def return_url(self, return_url):
+        """Sets the return_url of this UserAgreementResponse.
+
+        The URL redirected to after the agreement was completed.  # noqa: E501
+
+        :param return_url: The return_url of this UserAgreementResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._return_url = return_url
+
+    @property
     def settings(self):
         """Gets the settings of this UserAgreementResponse.  # noqa: E501
 
+        The display settings for this agreement.  # noqa: E501
 
         :return: The settings of this UserAgreementResponse.  # noqa: E501
         :rtype: DisplaySettings
@@ -436,6 +491,7 @@ class UserAgreementResponse(object):
     def settings(self, settings):
         """Sets the settings of this UserAgreementResponse.
 
+        The display settings for this agreement.  # noqa: E501
 
         :param settings: The settings of this UserAgreementResponse.  # noqa: E501
         :type: DisplaySettings
@@ -447,7 +503,7 @@ class UserAgreementResponse(object):
     def status(self):
         """Gets the status of this UserAgreementResponse.  # noqa: E501
 
-          # noqa: E501
+        User agreement status. One of:  - `created` - `agreed` - `declined`  # noqa: E501
 
         :return: The status of this UserAgreementResponse.  # noqa: E501
         :rtype: str
@@ -458,7 +514,7 @@ class UserAgreementResponse(object):
     def status(self, status):
         """Sets the status of this UserAgreementResponse.
 
-          # noqa: E501
+        User agreement status. One of:  - `created` - `agreed` - `declined`  # noqa: E501
 
         :param status: The status of this UserAgreementResponse.  # noqa: E501
         :type: str
@@ -470,10 +526,10 @@ class UserAgreementResponse(object):
     def style(self):
         """Gets the style of this UserAgreementResponse.  # noqa: E501
 
-          # noqa: E501
+        This property specifies the custom style provided when the agreement was created by [customizing the template appearance][].    [customizing the template appearance]: /docs/click-api/click101/customize-elastic-template-appearance/   # noqa: E501
 
         :return: The style of this UserAgreementResponse.  # noqa: E501
-        :rtype: dict(str, str)
+        :rtype: dict(str, object)
         """
         return self._style
 
@@ -481,10 +537,10 @@ class UserAgreementResponse(object):
     def style(self, style):
         """Sets the style of this UserAgreementResponse.
 
-          # noqa: E501
+        This property specifies the custom style provided when the agreement was created by [customizing the template appearance][].    [customizing the template appearance]: /docs/click-api/click101/customize-elastic-template-appearance/   # noqa: E501
 
         :param style: The style of this UserAgreementResponse.  # noqa: E501
-        :type: dict(str, str)
+        :type: dict(str, object)
         """
 
         self._style = style
@@ -493,7 +549,7 @@ class UserAgreementResponse(object):
     def version(self):
         """Gets the version of this UserAgreementResponse.  # noqa: E501
 
-          # noqa: E501
+        The human-readable semver version string.  # noqa: E501
 
         :return: The version of this UserAgreementResponse.  # noqa: E501
         :rtype: str
@@ -504,7 +560,7 @@ class UserAgreementResponse(object):
     def version(self, version):
         """Sets the version of this UserAgreementResponse.
 
-          # noqa: E501
+        The human-readable semver version string.  # noqa: E501
 
         :param version: The version of this UserAgreementResponse.  # noqa: E501
         :type: str
@@ -516,7 +572,7 @@ class UserAgreementResponse(object):
     def version_id(self):
         """Gets the version_id of this UserAgreementResponse.  # noqa: E501
 
-          # noqa: E501
+        The ID of the version.  # noqa: E501
 
         :return: The version_id of this UserAgreementResponse.  # noqa: E501
         :rtype: str
@@ -527,7 +583,7 @@ class UserAgreementResponse(object):
     def version_id(self, version_id):
         """Sets the version_id of this UserAgreementResponse.
 
-          # noqa: E501
+        The ID of the version.  # noqa: E501
 
         :param version_id: The version_id of this UserAgreementResponse.  # noqa: E501
         :type: str
@@ -539,7 +595,7 @@ class UserAgreementResponse(object):
     def version_number(self):
         """Gets the version_number of this UserAgreementResponse.  # noqa: E501
 
-          # noqa: E501
+        Version of the clickwrap.  # noqa: E501
 
         :return: The version_number of this UserAgreementResponse.  # noqa: E501
         :rtype: int
@@ -550,7 +606,7 @@ class UserAgreementResponse(object):
     def version_number(self, version_number):
         """Sets the version_number of this UserAgreementResponse.
 
-          # noqa: E501
+        Version of the clickwrap.  # noqa: E501
 
         :param version_number: The version_number of this UserAgreementResponse.  # noqa: E501
         :type: int

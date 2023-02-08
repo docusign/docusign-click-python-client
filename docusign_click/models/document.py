@@ -83,7 +83,7 @@ class Document(object):
     def document_base64(self):
         """Gets the document_base64 of this Document.  # noqa: E501
 
-          # noqa: E501
+        The base64-encoded contents of the document.  # noqa: E501
 
         :return: The document_base64 of this Document.  # noqa: E501
         :rtype: str
@@ -94,7 +94,7 @@ class Document(object):
     def document_base64(self, document_base64):
         """Sets the document_base64 of this Document.
 
-          # noqa: E501
+        The base64-encoded contents of the document.  # noqa: E501
 
         :param document_base64: The document_base64 of this Document.  # noqa: E501
         :type: str
@@ -106,7 +106,7 @@ class Document(object):
     def document_display(self):
         """Gets the document_display of this Document.  # noqa: E501
 
-          # noqa: E501
+        Display type: link, document or pdf  # noqa: E501
 
         :return: The document_display of this Document.  # noqa: E501
         :rtype: str
@@ -117,7 +117,7 @@ class Document(object):
     def document_display(self, document_display):
         """Sets the document_display of this Document.
 
-          # noqa: E501
+        Display type: link, document or pdf  # noqa: E501
 
         :param document_display: The document_display of this Document.  # noqa: E501
         :type: str
@@ -129,7 +129,7 @@ class Document(object):
     def document_html(self):
         """Gets the document_html of this Document.  # noqa: E501
 
-          # noqa: E501
+        The HTML representation of the document.  # noqa: E501
 
         :return: The document_html of this Document.  # noqa: E501
         :rtype: str
@@ -140,7 +140,7 @@ class Document(object):
     def document_html(self, document_html):
         """Sets the document_html of this Document.
 
-          # noqa: E501
+        The HTML representation of the document.  # noqa: E501
 
         :param document_html: The document_html of this Document.  # noqa: E501
         :type: str
@@ -152,7 +152,7 @@ class Document(object):
     def document_name(self):
         """Gets the document_name of this Document.  # noqa: E501
 
-          # noqa: E501
+        The name of the document.  # noqa: E501
 
         :return: The document_name of this Document.  # noqa: E501
         :rtype: str
@@ -163,7 +163,7 @@ class Document(object):
     def document_name(self, document_name):
         """Sets the document_name of this Document.
 
-          # noqa: E501
+        The name of the document.  # noqa: E501
 
         :param document_name: The document_name of this Document.  # noqa: E501
         :type: str
@@ -175,7 +175,7 @@ class Document(object):
     def file_extension(self):
         """Gets the file_extension of this Document.  # noqa: E501
 
-          # noqa: E501
+        The file extension of the document.  # noqa: E501
 
         :return: The file_extension of this Document.  # noqa: E501
         :rtype: str
@@ -186,7 +186,7 @@ class Document(object):
     def file_extension(self, file_extension):
         """Sets the file_extension of this Document.
 
-          # noqa: E501
+        The file extension of the document.  # noqa: E501
 
         :param file_extension: The file_extension of this Document.  # noqa: E501
         :type: str
@@ -198,7 +198,7 @@ class Document(object):
     def must_read(self):
         """Gets the must_read of this Document.  # noqa: E501
 
-          # noqa: E501
+        **True** if the user needs to scroll to the end of the document.  # noqa: E501
 
         :return: The must_read of this Document.  # noqa: E501
         :rtype: bool
@@ -209,7 +209,7 @@ class Document(object):
     def must_read(self, must_read):
         """Sets the must_read of this Document.
 
-          # noqa: E501
+        **True** if the user needs to scroll to the end of the document.  # noqa: E501
 
         :param must_read: The must_read of this Document.  # noqa: E501
         :type: bool
@@ -221,7 +221,7 @@ class Document(object):
     def must_view(self):
         """Gets the must_view of this Document.  # noqa: E501
 
-          # noqa: E501
+        **True** if the user must view the document.  # noqa: E501
 
         :return: The must_view of this Document.  # noqa: E501
         :rtype: bool
@@ -232,7 +232,7 @@ class Document(object):
     def must_view(self, must_view):
         """Sets the must_view of this Document.
 
-          # noqa: E501
+        **True** if the user must view the document.  # noqa: E501
 
         :param must_view: The must_view of this Document.  # noqa: E501
         :type: bool
@@ -244,7 +244,7 @@ class Document(object):
     def order(self):
         """Gets the order of this Document.  # noqa: E501
 
-          # noqa: E501
+        The order of document layout.  # noqa: E501
 
         :return: The order of this Document.  # noqa: E501
         :rtype: int
@@ -255,7 +255,7 @@ class Document(object):
     def order(self, order):
         """Sets the order of this Document.
 
-          # noqa: E501
+        The order of document layout.  # noqa: E501
 
         :param order: The order of this Document.  # noqa: E501
         :type: int

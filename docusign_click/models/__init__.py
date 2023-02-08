@@ -15,6 +15,7 @@
 from __future__ import absolute_import
 
 # import models into model package
+from docusign_click.models.bulk_clickwrap_request import BulkClickwrapRequest
 from docusign_click.models.clickwrap_agreements_response import ClickwrapAgreementsResponse
 from docusign_click.models.clickwrap_delete_response import ClickwrapDeleteResponse
 from docusign_click.models.clickwrap_request import ClickwrapRequest

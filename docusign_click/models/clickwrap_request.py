@@ -107,7 +107,7 @@ class ClickwrapRequest(object):
     def clickwrap_name(self):
         """Gets the clickwrap_name of this ClickwrapRequest.  # noqa: E501
 
-          # noqa: E501
+        The name of the clickwrap. This field is required.  # noqa: E501
 
         :return: The clickwrap_name of this ClickwrapRequest.  # noqa: E501
         :rtype: str
@@ -118,7 +118,7 @@ class ClickwrapRequest(object):
     def clickwrap_name(self, clickwrap_name):
         """Sets the clickwrap_name of this ClickwrapRequest.
 
-          # noqa: E501
+        The name of the clickwrap. This field is required.  # noqa: E501
 
         :param clickwrap_name: The clickwrap_name of this ClickwrapRequest.  # noqa: E501
         :type: str
@@ -130,7 +130,7 @@ class ClickwrapRequest(object):
     def data_fields(self):
         """Gets the data_fields of this ClickwrapRequest.  # noqa: E501
 
-          # noqa: E501
+        An array of data fields available to be inserted into the documents.  # noqa: E501
 
         :return: The data_fields of this ClickwrapRequest.  # noqa: E501
         :rtype: list[DataField]
@@ -141,7 +141,7 @@ class ClickwrapRequest(object):
     def data_fields(self, data_fields):
         """Sets the data_fields of this ClickwrapRequest.
 
-          # noqa: E501
+        An array of data fields available to be inserted into the documents.  # noqa: E501
 
         :param data_fields: The data_fields of this ClickwrapRequest.  # noqa: E501
         :type: list[DataField]
@@ -153,6 +153,7 @@ class ClickwrapRequest(object):
     def display_settings(self):
         """Gets the display_settings of this ClickwrapRequest.  # noqa: E501
 
+        Display settings for the clickwrap. This object is required.  # noqa: E501
 
         :return: The display_settings of this ClickwrapRequest.  # noqa: E501
         :rtype: DisplaySettings
@@ -163,6 +164,7 @@ class ClickwrapRequest(object):
     def display_settings(self, display_settings):
         """Sets the display_settings of this ClickwrapRequest.
 
+        Display settings for the clickwrap. This object is required.  # noqa: E501
 
         :param display_settings: The display_settings of this ClickwrapRequest.  # noqa: E501
         :type: DisplaySettings
@@ -174,7 +176,7 @@ class ClickwrapRequest(object):
     def documents(self):
         """Gets the documents of this ClickwrapRequest.  # noqa: E501
 
-          # noqa: E501
+        An array of documents. This object is required.  # noqa: E501
 
         :return: The documents of this ClickwrapRequest.  # noqa: E501
         :rtype: list[Document]
@@ -185,7 +187,7 @@ class ClickwrapRequest(object):
     def documents(self, documents):
         """Sets the documents of this ClickwrapRequest.
 
-          # noqa: E501
+        An array of documents. This object is required.  # noqa: E501
 
         :param documents: The documents of this ClickwrapRequest.  # noqa: E501
         :type: list[Document]
@@ -197,7 +199,7 @@ class ClickwrapRequest(object):
     def fields_to_null(self):
         """Gets the fields_to_null of this ClickwrapRequest.  # noqa: E501
 
-          # noqa: E501
+        Specifies whether `scheduledReacceptance` and `scheduledDate` should be cleared. May be one of:  - `\"scheduledReacceptance\"` - `\"scheduledDate\"` - `\"scheduledReacceptance,scheduledDate\"`   # noqa: E501
 
         :return: The fields_to_null of this ClickwrapRequest.  # noqa: E501
         :rtype: str
@@ -208,7 +210,7 @@ class ClickwrapRequest(object):
     def fields_to_null(self, fields_to_null):
         """Sets the fields_to_null of this ClickwrapRequest.
 
-          # noqa: E501
+        Specifies whether `scheduledReacceptance` and `scheduledDate` should be cleared. May be one of:  - `\"scheduledReacceptance\"` - `\"scheduledDate\"` - `\"scheduledReacceptance,scheduledDate\"`   # noqa: E501
 
         :param fields_to_null: The fields_to_null of this ClickwrapRequest.  # noqa: E501
         :type: str
@@ -220,7 +222,7 @@ class ClickwrapRequest(object):
     def is_major_version(self):
         """Gets the is_major_version of this ClickwrapRequest.  # noqa: E501
 
-          # noqa: E501
+        Not used.  # noqa: E501
 
         :return: The is_major_version of this ClickwrapRequest.  # noqa: E501
         :rtype: bool
@@ -231,7 +233,7 @@ class ClickwrapRequest(object):
     def is_major_version(self, is_major_version):
         """Sets the is_major_version of this ClickwrapRequest.
 
-          # noqa: E501
+        Not used.  # noqa: E501
 
         :param is_major_version: The is_major_version of this ClickwrapRequest.  # noqa: E501
         :type: bool
@@ -243,7 +245,7 @@ class ClickwrapRequest(object):
     def is_shared(self):
         """Gets the is_shared of this ClickwrapRequest.  # noqa: E501
 
-          # noqa: E501
+        When **true,** indicates that the clickwrap is shared with one or more users in the account.  # noqa: E501
 
         :return: The is_shared of this ClickwrapRequest.  # noqa: E501
         :rtype: bool
@@ -254,7 +256,7 @@ class ClickwrapRequest(object):
     def is_shared(self, is_shared):
         """Sets the is_shared of this ClickwrapRequest.
 
-          # noqa: E501
+        When **true,** indicates that the clickwrap is shared with one or more users in the account.  # noqa: E501
 
         :param is_shared: The is_shared of this ClickwrapRequest.  # noqa: E501
         :type: bool
@@ -266,7 +268,7 @@ class ClickwrapRequest(object):
     def name(self):
         """Gets the name of this ClickwrapRequest.  # noqa: E501
 
-          # noqa: E501
+        Not used.  # noqa: E501
 
         :return: The name of this ClickwrapRequest.  # noqa: E501
         :rtype: str
@@ -277,7 +279,7 @@ class ClickwrapRequest(object):
     def name(self, name):
         """Sets the name of this ClickwrapRequest.
 
-          # noqa: E501
+        Not used.  # noqa: E501
 
         :param name: The name of this ClickwrapRequest.  # noqa: E501
         :type: str
@@ -289,7 +291,7 @@ class ClickwrapRequest(object):
     def require_reacceptance(self):
         """Gets the require_reacceptance of this ClickwrapRequest.  # noqa: E501
 
-          # noqa: E501
+        When **true,** requires signers who have previously agreed to this clickwrap to sign again. The version number is incremented.  # noqa: E501
 
         :return: The require_reacceptance of this ClickwrapRequest.  # noqa: E501
         :rtype: bool
@@ -300,7 +302,7 @@ class ClickwrapRequest(object):
     def require_reacceptance(self, require_reacceptance):
         """Sets the require_reacceptance of this ClickwrapRequest.
 
-          # noqa: E501
+        When **true,** requires signers who have previously agreed to this clickwrap to sign again. The version number is incremented.  # noqa: E501
 
         :param require_reacceptance: The require_reacceptance of this ClickwrapRequest.  # noqa: E501
         :type: bool
@@ -312,7 +314,7 @@ class ClickwrapRequest(object):
     def scheduled_date(self):
         """Gets the scheduled_date of this ClickwrapRequest.  # noqa: E501
 
-          # noqa: E501
+        The time and date when this clickwrap is activated.  # noqa: E501
 
         :return: The scheduled_date of this ClickwrapRequest.  # noqa: E501
         :rtype: object
@@ -323,7 +325,7 @@ class ClickwrapRequest(object):
     def scheduled_date(self, scheduled_date):
         """Sets the scheduled_date of this ClickwrapRequest.
 
-          # noqa: E501
+        The time and date when this clickwrap is activated.  # noqa: E501
 
         :param scheduled_date: The scheduled_date of this ClickwrapRequest.  # noqa: E501
         :type: object
@@ -335,6 +337,7 @@ class ClickwrapRequest(object):
     def scheduled_reacceptance(self):
         """Gets the scheduled_reacceptance of this ClickwrapRequest.  # noqa: E501
 
+        Specifies the interval between reacceptances in days, weeks, months, or years.  # noqa: E501
 
         :return: The scheduled_reacceptance of this ClickwrapRequest.  # noqa: E501
         :rtype: ClickwrapScheduledReacceptance
@@ -345,6 +348,7 @@ class ClickwrapRequest(object):
     def scheduled_reacceptance(self, scheduled_reacceptance):
         """Sets the scheduled_reacceptance of this ClickwrapRequest.
 
+        Specifies the interval between reacceptances in days, weeks, months, or years.  # noqa: E501
 
         :param scheduled_reacceptance: The scheduled_reacceptance of this ClickwrapRequest.  # noqa: E501
         :type: ClickwrapScheduledReacceptance
@@ -356,7 +360,7 @@ class ClickwrapRequest(object):
     def status(self):
         """Gets the status of this ClickwrapRequest.  # noqa: E501
 
-          # noqa: E501
+        Clickwrap status. This property is read-only. Possible values:  - `active` - `inactive` - `deleted`  # noqa: E501
 
         :return: The status of this ClickwrapRequest.  # noqa: E501
         :rtype: str
@@ -367,7 +371,7 @@ class ClickwrapRequest(object):
     def status(self, status):
         """Sets the status of this ClickwrapRequest.
 
-          # noqa: E501
+        Clickwrap status. This property is read-only. Possible values:  - `active` - `inactive` - `deleted`  # noqa: E501
 
         :param status: The status of this ClickwrapRequest.  # noqa: E501
         :type: str
@@ -379,7 +383,7 @@ class ClickwrapRequest(object):
     def transfer_from_user_id(self):
         """Gets the transfer_from_user_id of this ClickwrapRequest.  # noqa: E501
 
-          # noqa: E501
+        Not used. To update the user ID of a clickwrap, use the [updateClickwrap](/docs/click-api/reference/accounts/clickwraps/updateclickwrap/) endpoint.  # noqa: E501
 
         :return: The transfer_from_user_id of this ClickwrapRequest.  # noqa: E501
         :rtype: str
@@ -390,7 +394,7 @@ class ClickwrapRequest(object):
     def transfer_from_user_id(self, transfer_from_user_id):
         """Sets the transfer_from_user_id of this ClickwrapRequest.
 
-          # noqa: E501
+        Not used. To update the user ID of a clickwrap, use the [updateClickwrap](/docs/click-api/reference/accounts/clickwraps/updateclickwrap/) endpoint.  # noqa: E501
 
         :param transfer_from_user_id: The transfer_from_user_id of this ClickwrapRequest.  # noqa: E501
         :type: str
@@ -402,7 +406,7 @@ class ClickwrapRequest(object):
     def transfer_to_user_id(self):
         """Gets the transfer_to_user_id of this ClickwrapRequest.  # noqa: E501
 
-          # noqa: E501
+        Not used. To update the user ID of a clickwrap, use the [updateClickwrap](/docs/click-api/reference/accounts/clickwraps/updateclickwrap/) endpoint.  # noqa: E501
 
         :return: The transfer_to_user_id of this ClickwrapRequest.  # noqa: E501
         :rtype: str
@@ -413,7 +417,7 @@ class ClickwrapRequest(object):
     def transfer_to_user_id(self, transfer_to_user_id):
         """Sets the transfer_to_user_id of this ClickwrapRequest.
 
-          # noqa: E501
+        Not used. To update the user ID of a clickwrap, use the [updateClickwrap](/docs/click-api/reference/accounts/clickwraps/updateclickwrap/) endpoint.  # noqa: E501
 
         :param transfer_to_user_id: The transfer_to_user_id of this ClickwrapRequest.  # noqa: E501
         :type: str

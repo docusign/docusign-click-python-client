@@ -63,7 +63,7 @@ class ClickwrapVersionsDeleteResponse(object):
     def clickwrap_id(self):
         """Gets the clickwrap_id of this ClickwrapVersionsDeleteResponse.  # noqa: E501
 
-          # noqa: E501
+        The ID of the clickwrap.  # noqa: E501
 
         :return: The clickwrap_id of this ClickwrapVersionsDeleteResponse.  # noqa: E501
         :rtype: str
@@ -74,7 +74,7 @@ class ClickwrapVersionsDeleteResponse(object):
     def clickwrap_id(self, clickwrap_id):
         """Sets the clickwrap_id of this ClickwrapVersionsDeleteResponse.
 
-          # noqa: E501
+        The ID of the clickwrap.  # noqa: E501
 
         :param clickwrap_id: The clickwrap_id of this ClickwrapVersionsDeleteResponse.  # noqa: E501
         :type: str
@@ -86,7 +86,7 @@ class ClickwrapVersionsDeleteResponse(object):
     def clickwrap_name(self):
         """Gets the clickwrap_name of this ClickwrapVersionsDeleteResponse.  # noqa: E501
 
-          # noqa: E501
+        The name of the clickwrap.  # noqa: E501
 
         :return: The clickwrap_name of this ClickwrapVersionsDeleteResponse.  # noqa: E501
         :rtype: str
@@ -97,7 +97,7 @@ class ClickwrapVersionsDeleteResponse(object):
     def clickwrap_name(self, clickwrap_name):
         """Sets the clickwrap_name of this ClickwrapVersionsDeleteResponse.
 
-          # noqa: E501
+        The name of the clickwrap.  # noqa: E501
 
         :param clickwrap_name: The clickwrap_name of this ClickwrapVersionsDeleteResponse.  # noqa: E501
         :type: str
@@ -109,7 +109,7 @@ class ClickwrapVersionsDeleteResponse(object):
     def versions(self):
         """Gets the versions of this ClickwrapVersionsDeleteResponse.  # noqa: E501
 
-          # noqa: E501
+        An array of delete responses.  # noqa: E501
 
         :return: The versions of this ClickwrapVersionsDeleteResponse.  # noqa: E501
         :rtype: list[ClickwrapVersionDeleteResponse]
@@ -120,7 +120,7 @@ class ClickwrapVersionsDeleteResponse(object):
     def versions(self, versions):
         """Sets the versions of this ClickwrapVersionsDeleteResponse.
 
-          # noqa: E501
+        An array of delete responses.  # noqa: E501
 
         :param versions: The versions of this ClickwrapVersionsDeleteResponse.  # noqa: E501
         :type: list[ClickwrapVersionDeleteResponse]

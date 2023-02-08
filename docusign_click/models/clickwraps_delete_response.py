@@ -55,7 +55,7 @@ class ClickwrapsDeleteResponse(object):
     def clickwraps(self):
         """Gets the clickwraps of this ClickwrapsDeleteResponse.  # noqa: E501
 
-          # noqa: E501
+        An array of clickwrap deletion results.  # noqa: E501
 
         :return: The clickwraps of this ClickwrapsDeleteResponse.  # noqa: E501
         :rtype: list[ClickwrapDeleteResponse]
@@ -66,7 +66,7 @@ class ClickwrapsDeleteResponse(object):
     def clickwraps(self, clickwraps):
         """Sets the clickwraps of this ClickwrapsDeleteResponse.
 
-          # noqa: E501
+        An array of clickwrap deletion results.  # noqa: E501
 
         :param clickwraps: The clickwraps of this ClickwrapsDeleteResponse.  # noqa: E501
         :type: list[ClickwrapDeleteResponse]

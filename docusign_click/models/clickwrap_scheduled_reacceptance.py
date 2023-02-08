@@ -63,7 +63,7 @@ class ClickwrapScheduledReacceptance(object):
     def recurrence_interval(self):
         """Gets the recurrence_interval of this ClickwrapScheduledReacceptance.  # noqa: E501
 
-          # noqa: E501
+        The time between recurrences specified in `recurrenceIntervalType` units.  The minimum and maximum values depend on `recurrenceIntervalType`:  - `days`: 1 - 365 - `weeks`: 1 - 52 - `months`: 1 - 12 - `years`: 1  # noqa: E501
 
         :return: The recurrence_interval of this ClickwrapScheduledReacceptance.  # noqa: E501
         :rtype: int
@@ -74,7 +74,7 @@ class ClickwrapScheduledReacceptance(object):
     def recurrence_interval(self, recurrence_interval):
         """Sets the recurrence_interval of this ClickwrapScheduledReacceptance.
 
-          # noqa: E501
+        The time between recurrences specified in `recurrenceIntervalType` units.  The minimum and maximum values depend on `recurrenceIntervalType`:  - `days`: 1 - 365 - `weeks`: 1 - 52 - `months`: 1 - 12 - `years`: 1  # noqa: E501
 
         :param recurrence_interval: The recurrence_interval of this ClickwrapScheduledReacceptance.  # noqa: E501
         :type: int
@@ -86,7 +86,7 @@ class ClickwrapScheduledReacceptance(object):
     def recurrence_interval_type(self):
         """Gets the recurrence_interval_type of this ClickwrapScheduledReacceptance.  # noqa: E501
 
-          # noqa: E501
+        The units of the `recurrenceInterval`. Must be one of:  - `days` - `weeks` - `month` - `years`   # noqa: E501
 
         :return: The recurrence_interval_type of this ClickwrapScheduledReacceptance.  # noqa: E501
         :rtype: str
@@ -97,7 +97,7 @@ class ClickwrapScheduledReacceptance(object):
     def recurrence_interval_type(self, recurrence_interval_type):
         """Sets the recurrence_interval_type of this ClickwrapScheduledReacceptance.
 
-          # noqa: E501
+        The units of the `recurrenceInterval`. Must be one of:  - `days` - `weeks` - `month` - `years`   # noqa: E501
 
         :param recurrence_interval_type: The recurrence_interval_type of this ClickwrapScheduledReacceptance.  # noqa: E501
         :type: str
@@ -109,7 +109,7 @@ class ClickwrapScheduledReacceptance(object):
     def start_date_time(self):
         """Gets the start_date_time of this ClickwrapScheduledReacceptance.  # noqa: E501
 
-          # noqa: E501
+        The date when the recurrence interval starts.  # noqa: E501
 
         :return: The start_date_time of this ClickwrapScheduledReacceptance.  # noqa: E501
         :rtype: object
@@ -120,7 +120,7 @@ class ClickwrapScheduledReacceptance(object):
     def start_date_time(self, start_date_time):
         """Sets the start_date_time of this ClickwrapScheduledReacceptance.
 
-          # noqa: E501
+        The date when the recurrence interval starts.  # noqa: E501
 
         :param start_date_time: The start_date_time of this ClickwrapScheduledReacceptance.  # noqa: E501
         :type: object

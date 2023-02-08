@@ -71,7 +71,7 @@ class ClickwrapDeleteResponse(object):
     def clickwrap_id(self):
         """Gets the clickwrap_id of this ClickwrapDeleteResponse.  # noqa: E501
 
-          # noqa: E501
+        The ID of the clickwrap.  # noqa: E501
 
         :return: The clickwrap_id of this ClickwrapDeleteResponse.  # noqa: E501
         :rtype: str
@@ -82,7 +82,7 @@ class ClickwrapDeleteResponse(object):
     def clickwrap_id(self, clickwrap_id):
         """Sets the clickwrap_id of this ClickwrapDeleteResponse.
 
-          # noqa: E501
+        The ID of the clickwrap.  # noqa: E501
 
         :param clickwrap_id: The clickwrap_id of this ClickwrapDeleteResponse.  # noqa: E501
         :type: str
@@ -94,7 +94,7 @@ class ClickwrapDeleteResponse(object):
     def clickwrap_name(self):
         """Gets the clickwrap_name of this ClickwrapDeleteResponse.  # noqa: E501
 
-          # noqa: E501
+        The name of the clickwrap.  # noqa: E501
 
         :return: The clickwrap_name of this ClickwrapDeleteResponse.  # noqa: E501
         :rtype: str
@@ -105,7 +105,7 @@ class ClickwrapDeleteResponse(object):
     def clickwrap_name(self, clickwrap_name):
         """Sets the clickwrap_name of this ClickwrapDeleteResponse.
 
-          # noqa: E501
+        The name of the clickwrap.  # noqa: E501
 
         :param clickwrap_name: The clickwrap_name of this ClickwrapDeleteResponse.  # noqa: E501
         :type: str
@@ -117,7 +117,7 @@ class ClickwrapDeleteResponse(object):
     def deletion_message(self):
         """Gets the deletion_message of this ClickwrapDeleteResponse.  # noqa: E501
 
-          # noqa: E501
+        A message describing the result of deletion request. One of:  - `alreadyDeleted`: Clickwrap is already deleted. - `deletionSuccess`: Successfully deleted the clickwrap. - `deletionFailure`: Failed to delete the clickwrap. - `cannotDelete`: Active clickwrap version cannot be deleted.  # noqa: E501
 
         :return: The deletion_message of this ClickwrapDeleteResponse.  # noqa: E501
         :rtype: str
@@ -128,7 +128,7 @@ class ClickwrapDeleteResponse(object):
     def deletion_message(self, deletion_message):
         """Sets the deletion_message of this ClickwrapDeleteResponse.
 
-          # noqa: E501
+        A message describing the result of deletion request. One of:  - `alreadyDeleted`: Clickwrap is already deleted. - `deletionSuccess`: Successfully deleted the clickwrap. - `deletionFailure`: Failed to delete the clickwrap. - `cannotDelete`: Active clickwrap version cannot be deleted.  # noqa: E501
 
         :param deletion_message: The deletion_message of this ClickwrapDeleteResponse.  # noqa: E501
         :type: str
@@ -140,7 +140,7 @@ class ClickwrapDeleteResponse(object):
     def deletion_success(self):
         """Gets the deletion_success of this ClickwrapDeleteResponse.  # noqa: E501
 
-          # noqa: E501
+        **True** if the clickwrap was deleted successfully. **False** otherwise.  # noqa: E501
 
         :return: The deletion_success of this ClickwrapDeleteResponse.  # noqa: E501
         :rtype: bool
@@ -151,7 +151,7 @@ class ClickwrapDeleteResponse(object):
     def deletion_success(self, deletion_success):
         """Sets the deletion_success of this ClickwrapDeleteResponse.
 
-          # noqa: E501
+        **True** if the clickwrap was deleted successfully. **False** otherwise.  # noqa: E501
 
         :param deletion_success: The deletion_success of this ClickwrapDeleteResponse.  # noqa: E501
         :type: bool
@@ -163,7 +163,7 @@ class ClickwrapDeleteResponse(object):
     def status(self):
         """Gets the status of this ClickwrapDeleteResponse.  # noqa: E501
 
-          # noqa: E501
+        Clickwrap status. Possible values:  - `active` - `inactive` - `deleted`  # noqa: E501
 
         :return: The status of this ClickwrapDeleteResponse.  # noqa: E501
         :rtype: str
@@ -174,7 +174,7 @@ class ClickwrapDeleteResponse(object):
     def status(self, status):
         """Sets the status of this ClickwrapDeleteResponse.
 
-          # noqa: E501
+        Clickwrap status. Possible values:  - `active` - `inactive` - `deleted`  # noqa: E501
 
         :param status: The status of this ClickwrapDeleteResponse.  # noqa: E501
         :type: str

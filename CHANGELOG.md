@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 See [DocuSign Support Center](https://support.docusign.com/en/releasenotes/) for Product Release Notes.
 
+## [v1.3.0] - Click API v1-22.4.01.00 - 2023-01-30
+### Changed
+- Added support for version v1-22.4.01.00 of the DocuSign Click API.
+- Updated the SDK release version.
+
 ## [v1.2.2] - Click API v1-22.3.01.00 - 2022-10-28
 ### Changed
 - Added support for version v1-22.3.01.00 of the DocuSign Click API.

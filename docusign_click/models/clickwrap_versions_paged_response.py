@@ -79,7 +79,7 @@ class ClickwrapVersionsPagedResponse(object):
     def account_id(self):
         """Gets the account_id of this ClickwrapVersionsPagedResponse.  # noqa: E501
 
-          # noqa: E501
+        The external account number (int) or account ID GUID.  # noqa: E501
 
         :return: The account_id of this ClickwrapVersionsPagedResponse.  # noqa: E501
         :rtype: str
@@ -90,7 +90,7 @@ class ClickwrapVersionsPagedResponse(object):
     def account_id(self, account_id):
         """Sets the account_id of this ClickwrapVersionsPagedResponse.
 
-          # noqa: E501
+        The external account number (int) or account ID GUID.  # noqa: E501
 
         :param account_id: The account_id of this ClickwrapVersionsPagedResponse.  # noqa: E501
         :type: str
@@ -102,7 +102,7 @@ class ClickwrapVersionsPagedResponse(object):
     def clickwrap_id(self):
         """Gets the clickwrap_id of this ClickwrapVersionsPagedResponse.  # noqa: E501
 
-          # noqa: E501
+        The ID of the clickwrap.  # noqa: E501
 
         :return: The clickwrap_id of this ClickwrapVersionsPagedResponse.  # noqa: E501
         :rtype: str
@@ -113,7 +113,7 @@ class ClickwrapVersionsPagedResponse(object):
     def clickwrap_id(self, clickwrap_id):
         """Sets the clickwrap_id of this ClickwrapVersionsPagedResponse.
 
-          # noqa: E501
+        The ID of the clickwrap.  # noqa: E501
 
         :param clickwrap_id: The clickwrap_id of this ClickwrapVersionsPagedResponse.  # noqa: E501
         :type: str
@@ -125,7 +125,7 @@ class ClickwrapVersionsPagedResponse(object):
     def clickwrap_name(self):
         """Gets the clickwrap_name of this ClickwrapVersionsPagedResponse.  # noqa: E501
 
-          # noqa: E501
+        The name of the clickwrap.  # noqa: E501
 
         :return: The clickwrap_name of this ClickwrapVersionsPagedResponse.  # noqa: E501
         :rtype: str
@@ -136,7 +136,7 @@ class ClickwrapVersionsPagedResponse(object):
     def clickwrap_name(self, clickwrap_name):
         """Sets the clickwrap_name of this ClickwrapVersionsPagedResponse.
 
-          # noqa: E501
+        The name of the clickwrap.  # noqa: E501
 
         :param clickwrap_name: The clickwrap_name of this ClickwrapVersionsPagedResponse.  # noqa: E501
         :type: str
@@ -148,7 +148,7 @@ class ClickwrapVersionsPagedResponse(object):
     def minimum_pages_remaining(self):
         """Gets the minimum_pages_remaining of this ClickwrapVersionsPagedResponse.  # noqa: E501
 
-          # noqa: E501
+        An array of clickwrap versions.  # noqa: E501
 
         :return: The minimum_pages_remaining of this ClickwrapVersionsPagedResponse.  # noqa: E501
         :rtype: int
@@ -159,7 +159,7 @@ class ClickwrapVersionsPagedResponse(object):
     def minimum_pages_remaining(self, minimum_pages_remaining):
         """Sets the minimum_pages_remaining of this ClickwrapVersionsPagedResponse.
 
-          # noqa: E501
+        An array of clickwrap versions.  # noqa: E501
 
         :param minimum_pages_remaining: The minimum_pages_remaining of this ClickwrapVersionsPagedResponse.  # noqa: E501
         :type: int
@@ -171,7 +171,7 @@ class ClickwrapVersionsPagedResponse(object):
     def page(self):
         """Gets the page of this ClickwrapVersionsPagedResponse.  # noqa: E501
 
-          # noqa: E501
+        The number of the current page.  # noqa: E501
 
         :return: The page of this ClickwrapVersionsPagedResponse.  # noqa: E501
         :rtype: int
@@ -182,7 +182,7 @@ class ClickwrapVersionsPagedResponse(object):
     def page(self, page):
         """Sets the page of this ClickwrapVersionsPagedResponse.
 
-          # noqa: E501
+        The number of the current page.  # noqa: E501
 
         :param page: The page of this ClickwrapVersionsPagedResponse.  # noqa: E501
         :type: int
@@ -194,7 +194,7 @@ class ClickwrapVersionsPagedResponse(object):
     def page_size(self):
         """Gets the page_size of this ClickwrapVersionsPagedResponse.  # noqa: E501
 
-          # noqa: E501
+        The number of items per page.  # noqa: E501
 
         :return: The page_size of this ClickwrapVersionsPagedResponse.  # noqa: E501
         :rtype: int
@@ -205,7 +205,7 @@ class ClickwrapVersionsPagedResponse(object):
     def page_size(self, page_size):
         """Sets the page_size of this ClickwrapVersionsPagedResponse.
 
-          # noqa: E501
+        The number of items per page.  # noqa: E501
 
         :param page_size: The page_size of this ClickwrapVersionsPagedResponse.  # noqa: E501
         :type: int
@@ -217,7 +217,7 @@ class ClickwrapVersionsPagedResponse(object):
     def versions(self):
         """Gets the versions of this ClickwrapVersionsPagedResponse.  # noqa: E501
 
-          # noqa: E501
+        An array of clickwrap versions.  # noqa: E501
 
         :return: The versions of this ClickwrapVersionsPagedResponse.  # noqa: E501
         :rtype: list[ClickwrapVersion]
@@ -228,7 +228,7 @@ class ClickwrapVersionsPagedResponse(object):
     def versions(self, versions):
         """Sets the versions of this ClickwrapVersionsPagedResponse.
 
-          # noqa: E501
+        An array of clickwrap versions.  # noqa: E501
 
         :param versions: The versions of this ClickwrapVersionsPagedResponse.  # noqa: E501
         :type: list[ClickwrapVersion]
