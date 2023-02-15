@@ -4,7 +4,7 @@
 """
     DocuSign Click API
 
-    DocuSign Click lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable clickwrap solution in your DocuSign integrations.  # noqa: E501
+    Elastic signing (also known as DocuSign Click)  lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable elastic template solution in your DocuSign integrations.  # noqa: E501
 
     OpenAPI spec version: v1
     Contact: devcenter@docusign.com
@@ -15,6 +15,7 @@
 from __future__ import absolute_import
 
 # import models into model package
+from docusign_click.models.bulk_clickwrap_request import BulkClickwrapRequest
 from docusign_click.models.clickwrap_agreements_response import ClickwrapAgreementsResponse
 from docusign_click.models.clickwrap_delete_response import ClickwrapDeleteResponse
 from docusign_click.models.clickwrap_request import ClickwrapRequest

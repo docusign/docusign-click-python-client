@@ -3,7 +3,7 @@
 """
     DocuSign Click API
 
-    DocuSign Click lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable clickwrap solution in your DocuSign integrations.  # noqa: E501
+    Elastic signing (also known as DocuSign Click)  lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable elastic template solution in your DocuSign integrations.  # noqa: E501
 
     OpenAPI spec version: v1
     Contact: devcenter@docusign.com
@@ -59,7 +59,7 @@ class ErrorDetails(object):
     def error_code(self):
         """Gets the error_code of this ErrorDetails.  # noqa: E501
 
-          # noqa: E501
+        The error code.  # noqa: E501
 
         :return: The error_code of this ErrorDetails.  # noqa: E501
         :rtype: str
@@ -70,7 +70,7 @@ class ErrorDetails(object):
     def error_code(self, error_code):
         """Sets the error_code of this ErrorDetails.
 
-          # noqa: E501
+        The error code.  # noqa: E501
 
         :param error_code: The error_code of this ErrorDetails.  # noqa: E501
         :type: str
@@ -82,7 +82,7 @@ class ErrorDetails(object):
     def message(self):
         """Gets the message of this ErrorDetails.  # noqa: E501
 
-          # noqa: E501
+        The error message.  # noqa: E501
 
         :return: The message of this ErrorDetails.  # noqa: E501
         :rtype: str
@@ -93,7 +93,7 @@ class ErrorDetails(object):
     def message(self, message):
         """Sets the message of this ErrorDetails.
 
-          # noqa: E501
+        The error message.  # noqa: E501
 
         :param message: The message of this ErrorDetails.  # noqa: E501
         :type: str

@@ -3,7 +3,7 @@
 """
     DocuSign Click API
 
-    DocuSign Click lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable clickwrap solution in your DocuSign integrations.  # noqa: E501
+    Elastic signing (also known as DocuSign Click)  lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable elastic template solution in your DocuSign integrations.  # noqa: E501
 
     OpenAPI spec version: v1
     Contact: devcenter@docusign.com
@@ -119,7 +119,7 @@ class ClickwrapVersionResponse(object):
     def account_id(self):
         """Gets the account_id of this ClickwrapVersionResponse.  # noqa: E501
 
-          # noqa: E501
+        The external account number (int) or account ID GUID.  # noqa: E501
 
         :return: The account_id of this ClickwrapVersionResponse.  # noqa: E501
         :rtype: str
@@ -130,7 +130,7 @@ class ClickwrapVersionResponse(object):
     def account_id(self, account_id):
         """Sets the account_id of this ClickwrapVersionResponse.
 
-          # noqa: E501
+        The external account number (int) or account ID GUID.  # noqa: E501
 
         :param account_id: The account_id of this ClickwrapVersionResponse.  # noqa: E501
         :type: str
@@ -142,7 +142,7 @@ class ClickwrapVersionResponse(object):
     def clickwrap_id(self):
         """Gets the clickwrap_id of this ClickwrapVersionResponse.  # noqa: E501
 
-          # noqa: E501
+        The ID of the clickwrap.  # noqa: E501
 
         :return: The clickwrap_id of this ClickwrapVersionResponse.  # noqa: E501
         :rtype: str
@@ -153,7 +153,7 @@ class ClickwrapVersionResponse(object):
     def clickwrap_id(self, clickwrap_id):
         """Sets the clickwrap_id of this ClickwrapVersionResponse.
 
-          # noqa: E501
+        The ID of the clickwrap.  # noqa: E501
 
         :param clickwrap_id: The clickwrap_id of this ClickwrapVersionResponse.  # noqa: E501
         :type: str
@@ -165,7 +165,7 @@ class ClickwrapVersionResponse(object):
     def clickwrap_name(self):
         """Gets the clickwrap_name of this ClickwrapVersionResponse.  # noqa: E501
 
-          # noqa: E501
+        The name of the clickwrap.  # noqa: E501
 
         :return: The clickwrap_name of this ClickwrapVersionResponse.  # noqa: E501
         :rtype: str
@@ -176,7 +176,7 @@ class ClickwrapVersionResponse(object):
     def clickwrap_name(self, clickwrap_name):
         """Sets the clickwrap_name of this ClickwrapVersionResponse.
 
-          # noqa: E501
+        The name of the clickwrap.  # noqa: E501
 
         :param clickwrap_name: The clickwrap_name of this ClickwrapVersionResponse.  # noqa: E501
         :type: str
@@ -188,7 +188,7 @@ class ClickwrapVersionResponse(object):
     def clickwrap_version_id(self):
         """Gets the clickwrap_version_id of this ClickwrapVersionResponse.  # noqa: E501
 
-          # noqa: E501
+        The unique version ID, a GUID, of this clickwrap version.  # noqa: E501
 
         :return: The clickwrap_version_id of this ClickwrapVersionResponse.  # noqa: E501
         :rtype: str
@@ -199,7 +199,7 @@ class ClickwrapVersionResponse(object):
     def clickwrap_version_id(self, clickwrap_version_id):
         """Sets the clickwrap_version_id of this ClickwrapVersionResponse.
 
-          # noqa: E501
+        The unique version ID, a GUID, of this clickwrap version.  # noqa: E501
 
         :param clickwrap_version_id: The clickwrap_version_id of this ClickwrapVersionResponse.  # noqa: E501
         :type: str
@@ -211,7 +211,7 @@ class ClickwrapVersionResponse(object):
     def created_time(self):
         """Gets the created_time of this ClickwrapVersionResponse.  # noqa: E501
 
-          # noqa: E501
+        The time that the clickwrap was created.  # noqa: E501
 
         :return: The created_time of this ClickwrapVersionResponse.  # noqa: E501
         :rtype: object
@@ -222,7 +222,7 @@ class ClickwrapVersionResponse(object):
     def created_time(self, created_time):
         """Sets the created_time of this ClickwrapVersionResponse.
 
-          # noqa: E501
+        The time that the clickwrap was created.  # noqa: E501
 
         :param created_time: The created_time of this ClickwrapVersionResponse.  # noqa: E501
         :type: object
@@ -234,7 +234,7 @@ class ClickwrapVersionResponse(object):
     def data_fields(self):
         """Gets the data_fields of this ClickwrapVersionResponse.  # noqa: E501
 
-          # noqa: E501
+        The list of all the data fields available for the clickwrap (custom fields and standard fields).  # noqa: E501
 
         :return: The data_fields of this ClickwrapVersionResponse.  # noqa: E501
         :rtype: list[DataField]
@@ -245,7 +245,7 @@ class ClickwrapVersionResponse(object):
     def data_fields(self, data_fields):
         """Sets the data_fields of this ClickwrapVersionResponse.
 
-          # noqa: E501
+        The list of all the data fields available for the clickwrap (custom fields and standard fields).  # noqa: E501
 
         :param data_fields: The data_fields of this ClickwrapVersionResponse.  # noqa: E501
         :type: list[DataField]
@@ -257,6 +257,7 @@ class ClickwrapVersionResponse(object):
     def display_settings(self):
         """Gets the display_settings of this ClickwrapVersionResponse.  # noqa: E501
 
+        Display settings for a clickwrap.  # noqa: E501
 
         :return: The display_settings of this ClickwrapVersionResponse.  # noqa: E501
         :rtype: DisplaySettings
@@ -267,6 +268,7 @@ class ClickwrapVersionResponse(object):
     def display_settings(self, display_settings):
         """Sets the display_settings of this ClickwrapVersionResponse.
 
+        Display settings for a clickwrap.  # noqa: E501
 
         :param display_settings: The display_settings of this ClickwrapVersionResponse.  # noqa: E501
         :type: DisplaySettings
@@ -278,7 +280,7 @@ class ClickwrapVersionResponse(object):
     def documents(self):
         """Gets the documents of this ClickwrapVersionResponse.  # noqa: E501
 
-          # noqa: E501
+        An array of documents.  # noqa: E501
 
         :return: The documents of this ClickwrapVersionResponse.  # noqa: E501
         :rtype: list[Document]
@@ -289,7 +291,7 @@ class ClickwrapVersionResponse(object):
     def documents(self, documents):
         """Sets the documents of this ClickwrapVersionResponse.
 
-          # noqa: E501
+        An array of documents.  # noqa: E501
 
         :param documents: The documents of this ClickwrapVersionResponse.  # noqa: E501
         :type: list[Document]
@@ -301,7 +303,7 @@ class ClickwrapVersionResponse(object):
     def last_modified(self):
         """Gets the last_modified of this ClickwrapVersionResponse.  # noqa: E501
 
-          # noqa: E501
+        The time that the clickwrap was last modified.  # noqa: E501
 
         :return: The last_modified of this ClickwrapVersionResponse.  # noqa: E501
         :rtype: object
@@ -312,7 +314,7 @@ class ClickwrapVersionResponse(object):
     def last_modified(self, last_modified):
         """Sets the last_modified of this ClickwrapVersionResponse.
 
-          # noqa: E501
+        The time that the clickwrap was last modified.  # noqa: E501
 
         :param last_modified: The last_modified of this ClickwrapVersionResponse.  # noqa: E501
         :type: object
@@ -324,7 +326,7 @@ class ClickwrapVersionResponse(object):
     def last_modified_by(self):
         """Gets the last_modified_by of this ClickwrapVersionResponse.  # noqa: E501
 
-          # noqa: E501
+        The user ID of the last user who modified this clickwrap.  # noqa: E501
 
         :return: The last_modified_by of this ClickwrapVersionResponse.  # noqa: E501
         :rtype: str
@@ -335,7 +337,7 @@ class ClickwrapVersionResponse(object):
     def last_modified_by(self, last_modified_by):
         """Sets the last_modified_by of this ClickwrapVersionResponse.
 
-          # noqa: E501
+        The user ID of the last user who modified this clickwrap.  # noqa: E501
 
         :param last_modified_by: The last_modified_by of this ClickwrapVersionResponse.  # noqa: E501
         :type: str
@@ -347,7 +349,7 @@ class ClickwrapVersionResponse(object):
     def owner_user_id(self):
         """Gets the owner_user_id of this ClickwrapVersionResponse.  # noqa: E501
 
-          # noqa: E501
+        The user ID of the owner of this clickwrap.  # noqa: E501
 
         :return: The owner_user_id of this ClickwrapVersionResponse.  # noqa: E501
         :rtype: str
@@ -358,7 +360,7 @@ class ClickwrapVersionResponse(object):
     def owner_user_id(self, owner_user_id):
         """Sets the owner_user_id of this ClickwrapVersionResponse.
 
-          # noqa: E501
+        The user ID of the owner of this clickwrap.  # noqa: E501
 
         :param owner_user_id: The owner_user_id of this ClickwrapVersionResponse.  # noqa: E501
         :type: str
@@ -370,7 +372,7 @@ class ClickwrapVersionResponse(object):
     def require_reacceptance(self):
         """Gets the require_reacceptance of this ClickwrapVersionResponse.  # noqa: E501
 
-          # noqa: E501
+        When **true,** requires signers who have previously agreed to this clickwrap to sign again. The version number is incremented.  # noqa: E501
 
         :return: The require_reacceptance of this ClickwrapVersionResponse.  # noqa: E501
         :rtype: bool
@@ -381,7 +383,7 @@ class ClickwrapVersionResponse(object):
     def require_reacceptance(self, require_reacceptance):
         """Sets the require_reacceptance of this ClickwrapVersionResponse.
 
-          # noqa: E501
+        When **true,** requires signers who have previously agreed to this clickwrap to sign again. The version number is incremented.  # noqa: E501
 
         :param require_reacceptance: The require_reacceptance of this ClickwrapVersionResponse.  # noqa: E501
         :type: bool
@@ -393,7 +395,7 @@ class ClickwrapVersionResponse(object):
     def scheduled_date(self):
         """Gets the scheduled_date of this ClickwrapVersionResponse.  # noqa: E501
 
-          # noqa: E501
+        The time and date when this clickwrap is activated.  # noqa: E501
 
         :return: The scheduled_date of this ClickwrapVersionResponse.  # noqa: E501
         :rtype: object
@@ -404,7 +406,7 @@ class ClickwrapVersionResponse(object):
     def scheduled_date(self, scheduled_date):
         """Sets the scheduled_date of this ClickwrapVersionResponse.
 
-          # noqa: E501
+        The time and date when this clickwrap is activated.  # noqa: E501
 
         :param scheduled_date: The scheduled_date of this ClickwrapVersionResponse.  # noqa: E501
         :type: object
@@ -416,6 +418,7 @@ class ClickwrapVersionResponse(object):
     def scheduled_reacceptance(self):
         """Gets the scheduled_reacceptance of this ClickwrapVersionResponse.  # noqa: E501
 
+        Specifies the interval between reacceptances in days, weeks, months, or years.  # noqa: E501
 
         :return: The scheduled_reacceptance of this ClickwrapVersionResponse.  # noqa: E501
         :rtype: ClickwrapScheduledReacceptance
@@ -426,6 +429,7 @@ class ClickwrapVersionResponse(object):
     def scheduled_reacceptance(self, scheduled_reacceptance):
         """Sets the scheduled_reacceptance of this ClickwrapVersionResponse.
 
+        Specifies the interval between reacceptances in days, weeks, months, or years.  # noqa: E501
 
         :param scheduled_reacceptance: The scheduled_reacceptance of this ClickwrapVersionResponse.  # noqa: E501
         :type: ClickwrapScheduledReacceptance
@@ -437,7 +441,7 @@ class ClickwrapVersionResponse(object):
     def status(self):
         """Gets the status of this ClickwrapVersionResponse.  # noqa: E501
 
-          # noqa: E501
+        Clickwrap status. Possible values:  - `active` - `inactive` - `deleted`  # noqa: E501
 
         :return: The status of this ClickwrapVersionResponse.  # noqa: E501
         :rtype: str
@@ -448,7 +452,7 @@ class ClickwrapVersionResponse(object):
     def status(self, status):
         """Sets the status of this ClickwrapVersionResponse.
 
-          # noqa: E501
+        Clickwrap status. Possible values:  - `active` - `inactive` - `deleted`  # noqa: E501
 
         :param status: The status of this ClickwrapVersionResponse.  # noqa: E501
         :type: str
@@ -460,7 +464,7 @@ class ClickwrapVersionResponse(object):
     def version_id(self):
         """Gets the version_id of this ClickwrapVersionResponse.  # noqa: E501
 
-          # noqa: E501
+        The ID of the version.  # noqa: E501
 
         :return: The version_id of this ClickwrapVersionResponse.  # noqa: E501
         :rtype: str
@@ -471,7 +475,7 @@ class ClickwrapVersionResponse(object):
     def version_id(self, version_id):
         """Sets the version_id of this ClickwrapVersionResponse.
 
-          # noqa: E501
+        The ID of the version.  # noqa: E501
 
         :param version_id: The version_id of this ClickwrapVersionResponse.  # noqa: E501
         :type: str
@@ -483,7 +487,7 @@ class ClickwrapVersionResponse(object):
     def version_number(self):
         """Gets the version_number of this ClickwrapVersionResponse.  # noqa: E501
 
-          # noqa: E501
+        Version of the clickwrap.  # noqa: E501
 
         :return: The version_number of this ClickwrapVersionResponse.  # noqa: E501
         :rtype: str
@@ -494,7 +498,7 @@ class ClickwrapVersionResponse(object):
     def version_number(self, version_number):
         """Sets the version_number of this ClickwrapVersionResponse.
 
-          # noqa: E501
+        Version of the clickwrap.  # noqa: E501
 
         :param version_number: The version_number of this ClickwrapVersionResponse.  # noqa: E501
         :type: str

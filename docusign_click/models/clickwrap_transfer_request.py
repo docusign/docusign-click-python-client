@@ -3,7 +3,7 @@
 """
     DocuSign Click API
 
-    DocuSign Click lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable clickwrap solution in your DocuSign integrations.  # noqa: E501
+    Elastic signing (also known as DocuSign Click)  lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable elastic template solution in your DocuSign integrations.  # noqa: E501
 
     OpenAPI spec version: v1
     Contact: devcenter@docusign.com
@@ -59,7 +59,7 @@ class ClickwrapTransferRequest(object):
     def transfer_from_user_id(self):
         """Gets the transfer_from_user_id of this ClickwrapTransferRequest.  # noqa: E501
 
-          # noqa: E501
+        ID of the user to transfer from. This property is required.  # noqa: E501
 
         :return: The transfer_from_user_id of this ClickwrapTransferRequest.  # noqa: E501
         :rtype: str
@@ -70,7 +70,7 @@ class ClickwrapTransferRequest(object):
     def transfer_from_user_id(self, transfer_from_user_id):
         """Sets the transfer_from_user_id of this ClickwrapTransferRequest.
 
-          # noqa: E501
+        ID of the user to transfer from. This property is required.  # noqa: E501
 
         :param transfer_from_user_id: The transfer_from_user_id of this ClickwrapTransferRequest.  # noqa: E501
         :type: str
@@ -82,7 +82,7 @@ class ClickwrapTransferRequest(object):
     def transfer_to_user_id(self):
         """Gets the transfer_to_user_id of this ClickwrapTransferRequest.  # noqa: E501
 
-          # noqa: E501
+        ID of the user to transfer to. This property is required.  # noqa: E501
 
         :return: The transfer_to_user_id of this ClickwrapTransferRequest.  # noqa: E501
         :rtype: str
@@ -93,7 +93,7 @@ class ClickwrapTransferRequest(object):
     def transfer_to_user_id(self, transfer_to_user_id):
         """Sets the transfer_to_user_id of this ClickwrapTransferRequest.
 
-          # noqa: E501
+        ID of the user to transfer to. This property is required.  # noqa: E501
 
         :param transfer_to_user_id: The transfer_to_user_id of this ClickwrapTransferRequest.  # noqa: E501
         :type: str

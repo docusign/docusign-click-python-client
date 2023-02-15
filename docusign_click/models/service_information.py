@@ -3,7 +3,7 @@
 """
     DocuSign Click API
 
-    DocuSign Click lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable clickwrap solution in your DocuSign integrations.  # noqa: E501
+    Elastic signing (also known as DocuSign Click)  lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable elastic template solution in your DocuSign integrations.  # noqa: E501
 
     OpenAPI spec version: v1
     Contact: devcenter@docusign.com
@@ -75,7 +75,7 @@ class ServiceInformation(object):
     def build_branch(self):
         """Gets the build_branch of this ServiceInformation.  # noqa: E501
 
-          # noqa: E501
+        The internal source control branch.  # noqa: E501
 
         :return: The build_branch of this ServiceInformation.  # noqa: E501
         :rtype: str
@@ -86,7 +86,7 @@ class ServiceInformation(object):
     def build_branch(self, build_branch):
         """Sets the build_branch of this ServiceInformation.
 
-          # noqa: E501
+        The internal source control branch.  # noqa: E501
 
         :param build_branch: The build_branch of this ServiceInformation.  # noqa: E501
         :type: str
@@ -98,7 +98,7 @@ class ServiceInformation(object):
     def build_branch_deployed_date_time(self):
         """Gets the build_branch_deployed_date_time of this ServiceInformation.  # noqa: E501
 
-          # noqa: E501
+        The date-time this branch was deployed.  # noqa: E501
 
         :return: The build_branch_deployed_date_time of this ServiceInformation.  # noqa: E501
         :rtype: str
@@ -109,7 +109,7 @@ class ServiceInformation(object):
     def build_branch_deployed_date_time(self, build_branch_deployed_date_time):
         """Sets the build_branch_deployed_date_time of this ServiceInformation.
 
-          # noqa: E501
+        The date-time this branch was deployed.  # noqa: E501
 
         :param build_branch_deployed_date_time: The build_branch_deployed_date_time of this ServiceInformation.  # noqa: E501
         :type: str
@@ -121,7 +121,7 @@ class ServiceInformation(object):
     def build_sha(self):
         """Gets the build_sha of this ServiceInformation.  # noqa: E501
 
-          # noqa: E501
+        The internal source control SHA.  # noqa: E501
 
         :return: The build_sha of this ServiceInformation.  # noqa: E501
         :rtype: str
@@ -132,7 +132,7 @@ class ServiceInformation(object):
     def build_sha(self, build_sha):
         """Sets the build_sha of this ServiceInformation.
 
-          # noqa: E501
+        The internal source control SHA.  # noqa: E501
 
         :param build_sha: The build_sha of this ServiceInformation.  # noqa: E501
         :type: str
@@ -144,7 +144,7 @@ class ServiceInformation(object):
     def build_version(self):
         """Gets the build_version of this ServiceInformation.  # noqa: E501
 
-          # noqa: E501
+        The internal build version information.  # noqa: E501
 
         :return: The build_version of this ServiceInformation.  # noqa: E501
         :rtype: str
@@ -155,7 +155,7 @@ class ServiceInformation(object):
     def build_version(self, build_version):
         """Sets the build_version of this ServiceInformation.
 
-          # noqa: E501
+        The internal build version information.  # noqa: E501
 
         :param build_version: The build_version of this ServiceInformation.  # noqa: E501
         :type: str
@@ -167,7 +167,7 @@ class ServiceInformation(object):
     def linked_sites(self):
         """Gets the linked_sites of this ServiceInformation.  # noqa: E501
 
-          # noqa: E501
+        An array of URLs (strings) of related sites.  # noqa: E501
 
         :return: The linked_sites of this ServiceInformation.  # noqa: E501
         :rtype: list[str]
@@ -178,7 +178,7 @@ class ServiceInformation(object):
     def linked_sites(self, linked_sites):
         """Sets the linked_sites of this ServiceInformation.
 
-          # noqa: E501
+        An array of URLs (strings) of related sites.  # noqa: E501
 
         :param linked_sites: The linked_sites of this ServiceInformation.  # noqa: E501
         :type: list[str]
@@ -190,7 +190,7 @@ class ServiceInformation(object):
     def service_versions(self):
         """Gets the service_versions of this ServiceInformation.  # noqa: E501
 
-          # noqa: E501
+        An array of `serviceVersion` objects.  # noqa: E501
 
         :return: The service_versions of this ServiceInformation.  # noqa: E501
         :rtype: list[ServiceVersion]
@@ -201,7 +201,7 @@ class ServiceInformation(object):
     def service_versions(self, service_versions):
         """Sets the service_versions of this ServiceInformation.
 
-          # noqa: E501
+        An array of `serviceVersion` objects.  # noqa: E501
 
         :param service_versions: The service_versions of this ServiceInformation.  # noqa: E501
         :type: list[ServiceVersion]

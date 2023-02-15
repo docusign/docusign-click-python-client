@@ -3,7 +3,7 @@
 """
     DocuSign Click API
 
-    DocuSign Click lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable clickwrap solution in your DocuSign integrations.  # noqa: E501
+    Elastic signing (also known as DocuSign Click)  lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable elastic template solution in your DocuSign integrations.  # noqa: E501
 
     OpenAPI spec version: v1
     Contact: devcenter@docusign.com
@@ -71,7 +71,7 @@ class ClickwrapAgreementsResponse(object):
     def begin_created_on(self):
         """Gets the begin_created_on of this ClickwrapAgreementsResponse.  # noqa: E501
 
-          # noqa: E501
+        User agreements from this datetime.  # noqa: E501
 
         :return: The begin_created_on of this ClickwrapAgreementsResponse.  # noqa: E501
         :rtype: object
@@ -82,7 +82,7 @@ class ClickwrapAgreementsResponse(object):
     def begin_created_on(self, begin_created_on):
         """Sets the begin_created_on of this ClickwrapAgreementsResponse.
 
-          # noqa: E501
+        User agreements from this datetime.  # noqa: E501
 
         :param begin_created_on: The begin_created_on of this ClickwrapAgreementsResponse.  # noqa: E501
         :type: object
@@ -94,7 +94,7 @@ class ClickwrapAgreementsResponse(object):
     def minimum_pages_remaining(self):
         """Gets the minimum_pages_remaining of this ClickwrapAgreementsResponse.  # noqa: E501
 
-          # noqa: E501
+        Number of pages remaining in the response.  # noqa: E501
 
         :return: The minimum_pages_remaining of this ClickwrapAgreementsResponse.  # noqa: E501
         :rtype: int
@@ -105,7 +105,7 @@ class ClickwrapAgreementsResponse(object):
     def minimum_pages_remaining(self, minimum_pages_remaining):
         """Sets the minimum_pages_remaining of this ClickwrapAgreementsResponse.
 
-          # noqa: E501
+        Number of pages remaining in the response.  # noqa: E501
 
         :param minimum_pages_remaining: The minimum_pages_remaining of this ClickwrapAgreementsResponse.  # noqa: E501
         :type: int
@@ -117,7 +117,7 @@ class ClickwrapAgreementsResponse(object):
     def page(self):
         """Gets the page of this ClickwrapAgreementsResponse.  # noqa: E501
 
-          # noqa: E501
+        The number of the current page.  # noqa: E501
 
         :return: The page of this ClickwrapAgreementsResponse.  # noqa: E501
         :rtype: int
@@ -128,7 +128,7 @@ class ClickwrapAgreementsResponse(object):
     def page(self, page):
         """Sets the page of this ClickwrapAgreementsResponse.
 
-          # noqa: E501
+        The number of the current page.  # noqa: E501
 
         :param page: The page of this ClickwrapAgreementsResponse.  # noqa: E501
         :type: int
@@ -140,7 +140,7 @@ class ClickwrapAgreementsResponse(object):
     def page_size(self):
         """Gets the page_size of this ClickwrapAgreementsResponse.  # noqa: E501
 
-          # noqa: E501
+        The number of items per page.  # noqa: E501
 
         :return: The page_size of this ClickwrapAgreementsResponse.  # noqa: E501
         :rtype: int
@@ -151,7 +151,7 @@ class ClickwrapAgreementsResponse(object):
     def page_size(self, page_size):
         """Sets the page_size of this ClickwrapAgreementsResponse.
 
-          # noqa: E501
+        The number of items per page.  # noqa: E501
 
         :param page_size: The page_size of this ClickwrapAgreementsResponse.  # noqa: E501
         :type: int
@@ -163,7 +163,7 @@ class ClickwrapAgreementsResponse(object):
     def user_agreements(self):
         """Gets the user_agreements of this ClickwrapAgreementsResponse.  # noqa: E501
 
-          # noqa: E501
+        An array of user agreements.  # noqa: E501
 
         :return: The user_agreements of this ClickwrapAgreementsResponse.  # noqa: E501
         :rtype: list[UserAgreementResponse]
@@ -174,7 +174,7 @@ class ClickwrapAgreementsResponse(object):
     def user_agreements(self, user_agreements):
         """Sets the user_agreements of this ClickwrapAgreementsResponse.
 
-          # noqa: E501
+        An array of user agreements.  # noqa: E501
 
         :param user_agreements: The user_agreements of this ClickwrapAgreementsResponse.  # noqa: E501
         :type: list[UserAgreementResponse]
