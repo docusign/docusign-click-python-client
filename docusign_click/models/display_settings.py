@@ -3,7 +3,7 @@
 """
     DocuSign Click API
 
-    DocuSign Click lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable clickwrap solution in your DocuSign integrations.  # noqa: E501
+    Elastic signing (also known as DocuSign Click)  lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable elastic template solution in your DocuSign integrations.  # noqa: E501
 
     OpenAPI spec version: v1
     Contact: devcenter@docusign.com
@@ -123,7 +123,7 @@ class DisplaySettings(object):
     def action_button_alignment(self):
         """Gets the action_button_alignment of this DisplaySettings.  # noqa: E501
 
-          # noqa: E501
+        Position of the Accept button in the agreement. One of   - `right` - `left`   # noqa: E501
 
         :return: The action_button_alignment of this DisplaySettings.  # noqa: E501
         :rtype: str
@@ -134,7 +134,7 @@ class DisplaySettings(object):
     def action_button_alignment(self, action_button_alignment):
         """Sets the action_button_alignment of this DisplaySettings.
 
-          # noqa: E501
+        Position of the Accept button in the agreement. One of   - `right` - `left`   # noqa: E501
 
         :param action_button_alignment: The action_button_alignment of this DisplaySettings.  # noqa: E501
         :type: str
@@ -146,7 +146,7 @@ class DisplaySettings(object):
     def allow_client_only(self):
         """Gets the allow_client_only of this DisplaySettings.  # noqa: E501
 
-          # noqa: E501
+        When **true,** this agreement can be be used in client-only integrations.  # noqa: E501
 
         :return: The allow_client_only of this DisplaySettings.  # noqa: E501
         :rtype: bool
@@ -157,7 +157,7 @@ class DisplaySettings(object):
     def allow_client_only(self, allow_client_only):
         """Sets the allow_client_only of this DisplaySettings.
 
-          # noqa: E501
+        When **true,** this agreement can be be used in client-only integrations.  # noqa: E501
 
         :param allow_client_only: The allow_client_only of this DisplaySettings.  # noqa: E501
         :type: bool
@@ -169,7 +169,7 @@ class DisplaySettings(object):
     def allowed_hosts(self):
         """Gets the allowed_hosts of this DisplaySettings.  # noqa: E501
 
-          # noqa: E501
+        Hosts that can host the clickwrap.  It is an error if the clickwrap didn't come from one of these hosts.   # noqa: E501
 
         :return: The allowed_hosts of this DisplaySettings.  # noqa: E501
         :rtype: list[str]
@@ -180,7 +180,7 @@ class DisplaySettings(object):
     def allowed_hosts(self, allowed_hosts):
         """Sets the allowed_hosts of this DisplaySettings.
 
-          # noqa: E501
+        Hosts that can host the clickwrap.  It is an error if the clickwrap didn't come from one of these hosts.   # noqa: E501
 
         :param allowed_hosts: The allowed_hosts of this DisplaySettings.  # noqa: E501
         :type: list[str]
@@ -192,7 +192,7 @@ class DisplaySettings(object):
     def brand_id(self):
         """Gets the brand_id of this DisplaySettings.  # noqa: E501
 
-          # noqa: E501
+        The signing brand ID.  # noqa: E501
 
         :return: The brand_id of this DisplaySettings.  # noqa: E501
         :rtype: str
@@ -203,7 +203,7 @@ class DisplaySettings(object):
     def brand_id(self, brand_id):
         """Sets the brand_id of this DisplaySettings.
 
-          # noqa: E501
+        The signing brand ID.  # noqa: E501
 
         :param brand_id: The brand_id of this DisplaySettings.  # noqa: E501
         :type: str
@@ -215,7 +215,7 @@ class DisplaySettings(object):
     def consent_button_text(self):
         """Gets the consent_button_text of this DisplaySettings.  # noqa: E501
 
-          # noqa: E501
+        Text on the agree button.  # noqa: E501
 
         :return: The consent_button_text of this DisplaySettings.  # noqa: E501
         :rtype: str
@@ -226,7 +226,7 @@ class DisplaySettings(object):
     def consent_button_text(self, consent_button_text):
         """Sets the consent_button_text of this DisplaySettings.
 
-          # noqa: E501
+        Text on the agree button.  # noqa: E501
 
         :param consent_button_text: The consent_button_text of this DisplaySettings.  # noqa: E501
         :type: str
@@ -238,7 +238,7 @@ class DisplaySettings(object):
     def consent_text(self):
         """Gets the consent_text of this DisplaySettings.  # noqa: E501
 
-          # noqa: E501
+        The statement prefixing the Electronic Record and Signature Disclosure agreement.  # noqa: E501
 
         :return: The consent_text of this DisplaySettings.  # noqa: E501
         :rtype: str
@@ -249,7 +249,7 @@ class DisplaySettings(object):
     def consent_text(self, consent_text):
         """Sets the consent_text of this DisplaySettings.
 
-          # noqa: E501
+        The statement prefixing the Electronic Record and Signature Disclosure agreement.  # noqa: E501
 
         :param consent_text: The consent_text of this DisplaySettings.  # noqa: E501
         :type: str
@@ -261,7 +261,7 @@ class DisplaySettings(object):
     def decline_button_text(self):
         """Gets the decline_button_text of this DisplaySettings.  # noqa: E501
 
-          # noqa: E501
+        The text on the decline button.  # noqa: E501
 
         :return: The decline_button_text of this DisplaySettings.  # noqa: E501
         :rtype: str
@@ -272,7 +272,7 @@ class DisplaySettings(object):
     def decline_button_text(self, decline_button_text):
         """Sets the decline_button_text of this DisplaySettings.
 
-          # noqa: E501
+        The text on the decline button.  # noqa: E501
 
         :param decline_button_text: The decline_button_text of this DisplaySettings.  # noqa: E501
         :type: str
@@ -284,7 +284,7 @@ class DisplaySettings(object):
     def display_name(self):
         """Gets the display_name of this DisplaySettings.  # noqa: E501
 
-          # noqa: E501
+        The display name of the user agreement.  # noqa: E501
 
         :return: The display_name of this DisplaySettings.  # noqa: E501
         :rtype: str
@@ -295,7 +295,7 @@ class DisplaySettings(object):
     def display_name(self, display_name):
         """Sets the display_name of this DisplaySettings.
 
-          # noqa: E501
+        The display name of the user agreement.  # noqa: E501
 
         :param display_name: The display_name of this DisplaySettings.  # noqa: E501
         :type: str
@@ -307,7 +307,7 @@ class DisplaySettings(object):
     def document_display(self):
         """Gets the document_display of this DisplaySettings.  # noqa: E501
 
-          # noqa: E501
+        Display type: link, document or pdf  # noqa: E501
 
         :return: The document_display of this DisplaySettings.  # noqa: E501
         :rtype: str
@@ -318,7 +318,7 @@ class DisplaySettings(object):
     def document_display(self, document_display):
         """Sets the document_display of this DisplaySettings.
 
-          # noqa: E501
+        Display type: link, document or pdf  # noqa: E501
 
         :param document_display: The document_display of this DisplaySettings.  # noqa: E501
         :type: str
@@ -330,7 +330,7 @@ class DisplaySettings(object):
     def downloadable(self):
         """Gets the downloadable of this DisplaySettings.  # noqa: E501
 
-          # noqa: E501
+        **True** if the agreement is downloadable.  # noqa: E501
 
         :return: The downloadable of this DisplaySettings.  # noqa: E501
         :rtype: bool
@@ -341,7 +341,7 @@ class DisplaySettings(object):
     def downloadable(self, downloadable):
         """Sets the downloadable of this DisplaySettings.
 
-          # noqa: E501
+        **True** if the agreement is downloadable.  # noqa: E501
 
         :param downloadable: The downloadable of this DisplaySettings.  # noqa: E501
         :type: bool
@@ -353,7 +353,7 @@ class DisplaySettings(object):
     def format(self):
         """Gets the format of this DisplaySettings.  # noqa: E501
 
-          # noqa: E501
+        Display format: inline or modal.  # noqa: E501
 
         :return: The format of this DisplaySettings.  # noqa: E501
         :rtype: str
@@ -364,7 +364,7 @@ class DisplaySettings(object):
     def format(self, format):
         """Sets the format of this DisplaySettings.
 
-          # noqa: E501
+        Display format: inline or modal.  # noqa: E501
 
         :param format: The format of this DisplaySettings.  # noqa: E501
         :type: str
@@ -376,7 +376,7 @@ class DisplaySettings(object):
     def has_decline_button(self):
         """Gets the has_decline_button of this DisplaySettings.  # noqa: E501
 
-          # noqa: E501
+        **True** if the agreement has a decline button.  # noqa: E501
 
         :return: The has_decline_button of this DisplaySettings.  # noqa: E501
         :rtype: bool
@@ -387,7 +387,7 @@ class DisplaySettings(object):
     def has_decline_button(self, has_decline_button):
         """Sets the has_decline_button of this DisplaySettings.
 
-          # noqa: E501
+        **True** if the agreement has a decline button.  # noqa: E501
 
         :param has_decline_button: The has_decline_button of this DisplaySettings.  # noqa: E501
         :type: bool
@@ -399,7 +399,7 @@ class DisplaySettings(object):
     def must_read(self):
         """Gets the must_read of this DisplaySettings.  # noqa: E501
 
-          # noqa: E501
+        **True** if the user needs to scroll to the end of the document.  # noqa: E501
 
         :return: The must_read of this DisplaySettings.  # noqa: E501
         :rtype: bool
@@ -410,7 +410,7 @@ class DisplaySettings(object):
     def must_read(self, must_read):
         """Sets the must_read of this DisplaySettings.
 
-          # noqa: E501
+        **True** if the user needs to scroll to the end of the document.  # noqa: E501
 
         :param must_read: The must_read of this DisplaySettings.  # noqa: E501
         :type: bool
@@ -422,7 +422,7 @@ class DisplaySettings(object):
     def must_view(self):
         """Gets the must_view of this DisplaySettings.  # noqa: E501
 
-          # noqa: E501
+        **True** if the user must view the document.  # noqa: E501
 
         :return: The must_view of this DisplaySettings.  # noqa: E501
         :rtype: bool
@@ -433,7 +433,7 @@ class DisplaySettings(object):
     def must_view(self, must_view):
         """Sets the must_view of this DisplaySettings.
 
-          # noqa: E501
+        **True** if the user must view the document.  # noqa: E501
 
         :param must_view: The must_view of this DisplaySettings.  # noqa: E501
         :type: bool
@@ -445,7 +445,7 @@ class DisplaySettings(object):
     def record_decline_responses(self):
         """Gets the record_decline_responses of this DisplaySettings.  # noqa: E501
 
-          # noqa: E501
+        When **true,** this agreement records decline actions.  # noqa: E501
 
         :return: The record_decline_responses of this DisplaySettings.  # noqa: E501
         :rtype: bool
@@ -456,7 +456,7 @@ class DisplaySettings(object):
     def record_decline_responses(self, record_decline_responses):
         """Sets the record_decline_responses of this DisplaySettings.
 
-          # noqa: E501
+        When **true,** this agreement records decline actions.  # noqa: E501
 
         :param record_decline_responses: The record_decline_responses of this DisplaySettings.  # noqa: E501
         :type: bool
@@ -468,7 +468,7 @@ class DisplaySettings(object):
     def require_accept(self):
         """Gets the require_accept of this DisplaySettings.  # noqa: E501
 
-          # noqa: E501
+        **True** if a checkbox is required to accept.  # noqa: E501
 
         :return: The require_accept of this DisplaySettings.  # noqa: E501
         :rtype: bool
@@ -479,7 +479,7 @@ class DisplaySettings(object):
     def require_accept(self, require_accept):
         """Sets the require_accept of this DisplaySettings.
 
-          # noqa: E501
+        **True** if a checkbox is required to accept.  # noqa: E501
 
         :param require_accept: The require_accept of this DisplaySettings.  # noqa: E501
         :type: bool
@@ -491,7 +491,7 @@ class DisplaySettings(object):
     def send_to_email(self):
         """Gets the send_to_email of this DisplaySettings.  # noqa: E501
 
-          # noqa: E501
+        **True** if send to email is applicable.  # noqa: E501
 
         :return: The send_to_email of this DisplaySettings.  # noqa: E501
         :rtype: bool
@@ -502,7 +502,7 @@ class DisplaySettings(object):
     def send_to_email(self, send_to_email):
         """Sets the send_to_email of this DisplaySettings.
 
-          # noqa: E501
+        **True** if send to email is applicable.  # noqa: E501
 
         :param send_to_email: The send_to_email of this DisplaySettings.  # noqa: E501
         :type: bool
@@ -514,7 +514,7 @@ class DisplaySettings(object):
     def statement_alignment(self):
         """Gets the statement_alignment of this DisplaySettings.  # noqa: E501
 
-          # noqa: E501
+        Position of the agreement statement. One of   - `top` - `bottom`   # noqa: E501
 
         :return: The statement_alignment of this DisplaySettings.  # noqa: E501
         :rtype: str
@@ -525,7 +525,7 @@ class DisplaySettings(object):
     def statement_alignment(self, statement_alignment):
         """Sets the statement_alignment of this DisplaySettings.
 
-          # noqa: E501
+        Position of the agreement statement. One of   - `top` - `bottom`   # noqa: E501
 
         :param statement_alignment: The statement_alignment of this DisplaySettings.  # noqa: E501
         :type: str

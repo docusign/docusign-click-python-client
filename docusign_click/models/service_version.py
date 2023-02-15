@@ -3,7 +3,7 @@
 """
     DocuSign Click API
 
-    DocuSign Click lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable clickwrap solution in your DocuSign integrations.  # noqa: E501
+    Elastic signing (also known as DocuSign Click)  lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable elastic template solution in your DocuSign integrations.  # noqa: E501
 
     OpenAPI spec version: v1
     Contact: devcenter@docusign.com
@@ -59,7 +59,7 @@ class ServiceVersion(object):
     def version(self):
         """Gets the version of this ServiceVersion.  # noqa: E501
 
-          # noqa: E501
+        The human-readable semver version string.  # noqa: E501
 
         :return: The version of this ServiceVersion.  # noqa: E501
         :rtype: str
@@ -70,7 +70,7 @@ class ServiceVersion(object):
     def version(self, version):
         """Sets the version of this ServiceVersion.
 
-          # noqa: E501
+        The human-readable semver version string.  # noqa: E501
 
         :param version: The version of this ServiceVersion.  # noqa: E501
         :type: str
@@ -82,7 +82,7 @@ class ServiceVersion(object):
     def version_url(self):
         """Gets the version_url of this ServiceVersion.  # noqa: E501
 
-          # noqa: E501
+        The URL where this version of the API can be found.  # noqa: E501
 
         :return: The version_url of this ServiceVersion.  # noqa: E501
         :rtype: str
@@ -93,7 +93,7 @@ class ServiceVersion(object):
     def version_url(self, version_url):
         """Sets the version_url of this ServiceVersion.
 
-          # noqa: E501
+        The URL where this version of the API can be found.  # noqa: E501
 
         :param version_url: The version_url of this ServiceVersion.  # noqa: E501
         :type: str

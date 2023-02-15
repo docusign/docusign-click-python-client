@@ -3,7 +3,7 @@
 """
     DocuSign Click API
 
-    DocuSign Click lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable clickwrap solution in your DocuSign integrations.  # noqa: E501
+    Elastic signing (also known as DocuSign Click)  lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable elastic template solution in your DocuSign integrations.  # noqa: E501
 
     OpenAPI spec version: v1
     Contact: devcenter@docusign.com
@@ -40,9 +40,124 @@ class AccountsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    def create_bulk_clickwrap_agreements(self, account_id, clickwrap_id, **kwargs):
+        """
+        Starts an export of clickwrap agreements for a specified date range.
+        Starts an asynchronus process to export clickwrap agreements for a specified date range. An email will be sent to the creator after it has been processed.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.create_bulk_clickwrap_agreements(account_id, clickwrap_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
+        :param BulkClickwrapRequest bulk_clickwrap_request: Data used to start a bulk agreements export.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('callback'):
+            return self.create_bulk_clickwrap_agreements_with_http_info(account_id, clickwrap_id, **kwargs)
+        else:
+            (data) = self.create_bulk_clickwrap_agreements_with_http_info(account_id, clickwrap_id, **kwargs)
+            return data
+
+    def create_bulk_clickwrap_agreements_with_http_info(self, account_id, clickwrap_id, **kwargs):
+        """
+        Starts an export of clickwrap agreements for a specified date range.
+        Starts an asynchronus process to export clickwrap agreements for a specified date range. An email will be sent to the creator after it has been processed.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.create_bulk_clickwrap_agreements_with_http_info(account_id, clickwrap_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
+        :param BulkClickwrapRequest bulk_clickwrap_request: Data used to start a bulk agreements export.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['account_id', 'clickwrap_id', 'bulk_clickwrap_request']
+        all_params.append('callback')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_bulk_clickwrap_agreements" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'account_id' is set
+        if ('account_id' not in params) or (params['account_id'] is None):
+            raise ValueError("Missing the required parameter `account_id` when calling `create_bulk_clickwrap_agreements`")
+        # verify the required parameter 'clickwrap_id' is set
+        if ('clickwrap_id' not in params) or (params['clickwrap_id'] is None):
+            raise ValueError("Missing the required parameter `clickwrap_id` when calling `create_bulk_clickwrap_agreements`")
+
+
+        collection_formats = {}
+
+        resource_path = '/v1/accounts/{accountId}/clickwraps/{clickwrapId}/bulk_agreements'.replace('{format}', 'json')
+        path_params = {}
+        if 'account_id' in params:
+            path_params['accountId'] = params['account_id']
+        if 'clickwrap_id' in params:
+            path_params['clickwrapId'] = params['clickwrap_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'bulk_clickwrap_request' in params:
+            body_params = params['bulk_clickwrap_request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api(resource_path, 'POST',
+                                        path_params,
+                                        query_params,
+                                        header_params,
+                                        body=body_params,
+                                        post_params=form_params,
+                                        files=local_var_files,
+                                        response_type=None,
+                                        auth_settings=auth_settings,
+                                        callback=params.get('callback'),
+                                        _return_http_data_only=params.get('_return_http_data_only'),
+                                        _preload_content=params.get('_preload_content', True),
+                                        _request_timeout=params.get('_request_timeout'),
+                                        collection_formats=collection_formats)
+
     def create_clickwrap(self, account_id, **kwargs):
         """
-        Creates a Clickwrap for the specified accountId
+        Creates a clickwrap for an account.
+        Creates a clickwrap for an account.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -53,8 +168,8 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param ClickwrapRequest clickwrap_request:
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param ClickwrapRequest clickwrap_request: Request body for working with clickwrap.
         :return: ClickwrapVersionSummaryResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -68,7 +183,8 @@ class AccountsApi(object):
 
     def create_clickwrap_with_http_info(self, account_id, **kwargs):
         """
-        Creates a Clickwrap for the specified accountId
+        Creates a clickwrap for an account.
+        Creates a clickwrap for an account.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -79,8 +195,8 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param ClickwrapRequest clickwrap_request:
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param ClickwrapRequest clickwrap_request: Request body for working with clickwrap.
         :return: ClickwrapVersionSummaryResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -147,7 +263,8 @@ class AccountsApi(object):
 
     def create_clickwrap_version(self, account_id, clickwrap_id, **kwargs):
         """
-        Creates the clickwrap version
+        Creates a new clickwrap version.
+        Creates a new version of an existing clickwrap. In a new version, you can replace the uploaded documents, change the display settings, and change the name of the clickwrap. The version number is automatically incremented based on the last version of the clickwrap.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -158,9 +275,9 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param ClickwrapRequest clickwrap_request:
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
+        :param ClickwrapRequest clickwrap_request: Request body for working with clickwrap.
         :return: ClickwrapVersionSummaryResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -174,7 +291,8 @@ class AccountsApi(object):
 
     def create_clickwrap_version_with_http_info(self, account_id, clickwrap_id, **kwargs):
         """
-        Creates the clickwrap version
+        Creates a new clickwrap version.
+        Creates a new version of an existing clickwrap. In a new version, you can replace the uploaded documents, change the display settings, and change the name of the clickwrap. The version number is automatically incremented based on the last version of the clickwrap.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -185,9 +303,9 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param ClickwrapRequest clickwrap_request:
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
+        :param ClickwrapRequest clickwrap_request: Request body for working with clickwrap.
         :return: ClickwrapVersionSummaryResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -259,7 +377,8 @@ class AccountsApi(object):
 
     def create_has_agreed(self, account_id, clickwrap_id, **kwargs):
         """
-        Checks if a user has agreed to a clickwrap and returns a response with the agreement url. Returns HttpStatusCode.OK if user has no pending agreement.
+        Creates a unique URL for the agreement that you can embed in your application.
+        Creates a unique URL for the agreement that you can embed in your application.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage` and `click.send`.  The request must include at least the `clientUserId`. This is a value that you generate to identify the unique recipient of the agreement.  If you are using a [dynamic content][] document, you can supply the values in the documentData property of the request, like this:  ```json {   \"clientUserId\": \"cl-bc7f-48a9\",   \"documentData\": {     \"fullName\": \"T. J. Fanning\",     \"email\": \"tj@example.com\",     \"company\": \"Fanning Indusdtries\",     \"title\": \"Cat wrangler\",     \"date\": \"2022-10-13T05:17:14-07:00\"   } } ```  A response will look like this. The `agreementUrl` is unique to the user identified by the `clientUserId`. Your user can open the URL to approve the agreement. The `documentData` property appears only if you provided it in the request.  ```json {   \"accountId\": \"624e3e00-xxxx-xxxx-xxxx-43918c520dab\",   \"clickwrapId\": \"0e64e4a7-xxxx-xxxx-xxxx-ce5a93b162af\",   \"clientUserId\": \"tcl-bc7f-48a9j\",   \"agreementId\": \"1f346c7d-xxxx-xxxx-xxxx-a5c968666785\",   \"documents\": [ . . .],   \"consumerDisclosureEnabled\": true,   \"agreementUrl\": \"https://demo.docusign.net/clickapi/v1/redeem?agreementToken=AcTZT8g ... cxEqrUsA1lQ8DPPy05dE0\",   \"createdOn\": \"2022-10-20T16:27:25.1287685Z\",   \"status\": \"created\",   \"versionId\": \"5957716d-xxxx-xxxx-xxxx-e1594f00ff12\",   \"versionNumber\": 1,   \"settings\": {     \"displayName\": \"Agree with me\",     \"hasDeclineButton\": true,     .  . .     \"statementAlignment\": \"bottom\"   },   \"documentData\": {     \"fullName\": \"T. J. Fanning\",     \"email\": \"tj@example.com\",     \"company\": \"Fanning Indusdtries\",     \"title\": \"Cat wrangler\",     \"date\": \"2022-10-13T05:17:14-07:00\"   } } ```  This method returns the following result codes and response bodies depending on whether the user has agreed.   | Agreed | Response code | Response body          | | :----- | :------------ | :--------------------- | | No     | 201           | Full response as above | | Yes    | 200           | No response (empty)    |   ### Related topics  - [Add dynamic content to your clickwrap][dynamic content] - [How to embed a clickwrap][embed-howto]   [dynamic content]:  /docs/click-api/click101/customize-clickwrap-fields/#add-dynamic-content-to-your-clickwrap [embedding]:        /docs/click-api/click101/customize-clickwrap-fields/#embed-clickwraps-that-contain-dynamic-content [embed-howto]:      /docs/click-api/how-to/embed-clickwraps/ 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -270,9 +389,9 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param UserAgreementRequest user_agreement_request:
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
+        :param UserAgreementRequest user_agreement_request: Data used to create the agreement.
         :return: UserAgreementResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -286,7 +405,8 @@ class AccountsApi(object):
 
     def create_has_agreed_with_http_info(self, account_id, clickwrap_id, **kwargs):
         """
-        Checks if a user has agreed to a clickwrap and returns a response with the agreement url. Returns HttpStatusCode.OK if user has no pending agreement.
+        Creates a unique URL for the agreement that you can embed in your application.
+        Creates a unique URL for the agreement that you can embed in your application.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage` and `click.send`.  The request must include at least the `clientUserId`. This is a value that you generate to identify the unique recipient of the agreement.  If you are using a [dynamic content][] document, you can supply the values in the documentData property of the request, like this:  ```json {   \"clientUserId\": \"cl-bc7f-48a9\",   \"documentData\": {     \"fullName\": \"T. J. Fanning\",     \"email\": \"tj@example.com\",     \"company\": \"Fanning Indusdtries\",     \"title\": \"Cat wrangler\",     \"date\": \"2022-10-13T05:17:14-07:00\"   } } ```  A response will look like this. The `agreementUrl` is unique to the user identified by the `clientUserId`. Your user can open the URL to approve the agreement. The `documentData` property appears only if you provided it in the request.  ```json {   \"accountId\": \"624e3e00-xxxx-xxxx-xxxx-43918c520dab\",   \"clickwrapId\": \"0e64e4a7-xxxx-xxxx-xxxx-ce5a93b162af\",   \"clientUserId\": \"tcl-bc7f-48a9j\",   \"agreementId\": \"1f346c7d-xxxx-xxxx-xxxx-a5c968666785\",   \"documents\": [ . . .],   \"consumerDisclosureEnabled\": true,   \"agreementUrl\": \"https://demo.docusign.net/clickapi/v1/redeem?agreementToken=AcTZT8g ... cxEqrUsA1lQ8DPPy05dE0\",   \"createdOn\": \"2022-10-20T16:27:25.1287685Z\",   \"status\": \"created\",   \"versionId\": \"5957716d-xxxx-xxxx-xxxx-e1594f00ff12\",   \"versionNumber\": 1,   \"settings\": {     \"displayName\": \"Agree with me\",     \"hasDeclineButton\": true,     .  . .     \"statementAlignment\": \"bottom\"   },   \"documentData\": {     \"fullName\": \"T. J. Fanning\",     \"email\": \"tj@example.com\",     \"company\": \"Fanning Indusdtries\",     \"title\": \"Cat wrangler\",     \"date\": \"2022-10-13T05:17:14-07:00\"   } } ```  This method returns the following result codes and response bodies depending on whether the user has agreed.   | Agreed | Response code | Response body          | | :----- | :------------ | :--------------------- | | No     | 201           | Full response as above | | Yes    | 200           | No response (empty)    |   ### Related topics  - [Add dynamic content to your clickwrap][dynamic content] - [How to embed a clickwrap][embed-howto]   [dynamic content]:  /docs/click-api/click101/customize-clickwrap-fields/#add-dynamic-content-to-your-clickwrap [embedding]:        /docs/click-api/click101/customize-clickwrap-fields/#embed-clickwraps-that-contain-dynamic-content [embed-howto]:      /docs/click-api/how-to/embed-clickwraps/ 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -297,9 +417,9 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param UserAgreementRequest user_agreement_request:
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
+        :param UserAgreementRequest user_agreement_request: Data used to create the agreement.
         :return: UserAgreementResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -371,7 +491,8 @@ class AccountsApi(object):
 
     def delete_clickwrap(self, account_id, clickwrap_id, **kwargs):
         """
-        Deletes the clickwrap and all its version specified by clickwrapId. Active clickwrap will not get deleted
+        Deletes a clickwrap and all of its versions.
+        Deletes the clickwrap specified by `clickwrapId` and all of its versions. Active clickwraps are not deleted  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -382,9 +503,9 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param str versions:
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
+        :param str versions: A comma-separated list of versions to delete.
         :return: ClickwrapVersionsDeleteResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -398,7 +519,8 @@ class AccountsApi(object):
 
     def delete_clickwrap_with_http_info(self, account_id, clickwrap_id, **kwargs):
         """
-        Deletes the clickwrap and all its version specified by clickwrapId. Active clickwrap will not get deleted
+        Deletes a clickwrap and all of its versions.
+        Deletes the clickwrap specified by `clickwrapId` and all of its versions. Active clickwraps are not deleted  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -409,9 +531,9 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param str versions:
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
+        :param str versions: A comma-separated list of versions to delete.
         :return: ClickwrapVersionsDeleteResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -483,7 +605,8 @@ class AccountsApi(object):
 
     def delete_clickwrap_version(self, account_id, clickwrap_id, version_id, **kwargs):
         """
-        Delete a Clickwrap version specified by versionId
+        Deletes a clickwrap version by version ID.
+        Deletes the clickwrap version specified by `versionId` of the clickwrap specified by `clickwrapId`.  **Note:** This endpoint requires the version ID (a GUID), not the version number (an integer).  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -494,9 +617,9 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param str version_id: (required)
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
+        :param str version_id: The ID of the clickwrap version. (required)
         :return: ClickwrapVersionDeleteResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -510,7 +633,8 @@ class AccountsApi(object):
 
     def delete_clickwrap_version_with_http_info(self, account_id, clickwrap_id, version_id, **kwargs):
         """
-        Delete a Clickwrap version specified by versionId
+        Deletes a clickwrap version by version ID.
+        Deletes the clickwrap version specified by `versionId` of the clickwrap specified by `clickwrapId`.  **Note:** This endpoint requires the version ID (a GUID), not the version number (an integer).  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -521,9 +645,9 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param str version_id: (required)
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
+        :param str version_id: The ID of the clickwrap version. (required)
         :return: ClickwrapVersionDeleteResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -598,7 +722,8 @@ class AccountsApi(object):
 
     def delete_clickwrap_versions(self, account_id, clickwrap_id, **kwargs):
         """
-        Deletes the versions specified by query parameter clickwrapVersionIds for a clickwrap, or all versions if no query parameter is specified. It will not delete if a version is active.
+        Deletes the versions of a clickwrap.
+        Deletes all versions of a clickwrap, or only the ones specified in the `clickwrapVersionIds` query parameter.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -609,9 +734,9 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param str clickwrap_version_ids:
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
+        :param str clickwrap_version_ids: A comma-separated list of clickwrap version IDs to delete.
         :return: ClickwrapVersionsDeleteResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -625,7 +750,8 @@ class AccountsApi(object):
 
     def delete_clickwrap_versions_with_http_info(self, account_id, clickwrap_id, **kwargs):
         """
-        Deletes the versions specified by query parameter clickwrapVersionIds for a clickwrap, or all versions if no query parameter is specified. It will not delete if a version is active.
+        Deletes the versions of a clickwrap.
+        Deletes all versions of a clickwrap, or only the ones specified in the `clickwrapVersionIds` query parameter.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -636,9 +762,9 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param str clickwrap_version_ids:
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
+        :param str clickwrap_version_ids: A comma-separated list of clickwrap version IDs to delete.
         :return: ClickwrapVersionsDeleteResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -710,7 +836,8 @@ class AccountsApi(object):
 
     def delete_clickwraps(self, account_id, **kwargs):
         """
-        Deletes all the clickwraps for an account or the ones passed in query parameter clickwrapIds. It will not delete active clickwraps.
+        Deletes clickwraps for an account.
+        Deletes all clickwraps for an account or only the ones specified in the `clickwrapIds` query parameter.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -721,8 +848,8 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_ids:
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_ids: A comma-separated list of clickwrap IDs to delete.
         :return: ClickwrapsDeleteResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -736,7 +863,8 @@ class AccountsApi(object):
 
     def delete_clickwraps_with_http_info(self, account_id, **kwargs):
         """
-        Deletes all the clickwraps for an account or the ones passed in query parameter clickwrapIds. It will not delete active clickwraps.
+        Deletes clickwraps for an account.
+        Deletes all clickwraps for an account or only the ones specified in the `clickwrapIds` query parameter.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -747,8 +875,8 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_ids:
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_ids: A comma-separated list of clickwrap IDs to delete.
         :return: ClickwrapsDeleteResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -815,7 +943,8 @@ class AccountsApi(object):
 
     def get_agreement(self, account_id, agreement_id, clickwrap_id, **kwargs):
         """
-        Gets the agreement by a provided agreement ID
+        Gets a specific agreement for a specified clickwrap.
+        Gets the agreement specified by `agreementId`.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage` or `click.send`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -826,9 +955,9 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str agreement_id: (required)
-        :param str clickwrap_id: (required)
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str agreement_id: The agreement ID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
         :return: UserAgreementResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -842,7 +971,8 @@ class AccountsApi(object):
 
     def get_agreement_with_http_info(self, account_id, agreement_id, clickwrap_id, **kwargs):
         """
-        Gets the agreement by a provided agreement ID
+        Gets a specific agreement for a specified clickwrap.
+        Gets the agreement specified by `agreementId`.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage` or `click.send`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -853,9 +983,9 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str agreement_id: (required)
-        :param str clickwrap_id: (required)
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str agreement_id: The agreement ID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
         :return: UserAgreementResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -931,6 +1061,7 @@ class AccountsApi(object):
     def get_agreement_document(self, account_id, clickwrap_id, order_or_disclosure, version_id, **kwargs):
         """
         Downloads a document at an order within the agreement.
+        Downloads a specific document from the agreement presented to the user.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.sign`
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -941,10 +1072,10 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param str order_or_disclosure: (required)
-        :param str version_id: (required)
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
+        :param str order_or_disclosure: The order of the document or consumer_disclosure. (required)
+        :param str version_id: The ID of the clickwrap version. (required)
         :return: Document
                  If the method is called asynchronously,
                  returns the request thread.
@@ -959,6 +1090,7 @@ class AccountsApi(object):
     def get_agreement_document_with_http_info(self, account_id, clickwrap_id, order_or_disclosure, version_id, **kwargs):
         """
         Downloads a document at an order within the agreement.
+        Downloads a specific document from the agreement presented to the user.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.sign`
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -969,10 +1101,10 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param str order_or_disclosure: (required)
-        :param str version_id: (required)
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
+        :param str order_or_disclosure: The order of the document or consumer_disclosure. (required)
+        :param str version_id: The ID of the clickwrap version. (required)
         :return: Document
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1052,7 +1184,8 @@ class AccountsApi(object):
 
     def get_agreement_pdf(self, account_id, agreement_id, clickwrap_id, **kwargs):
         """
-        Downloads the agreement PDF and optionally certificate of completion.
+        Gets the completed user agreement PDF.
+        Gets the PDF of  `agreementId` for the clickwrap specified by `clickwrapId`.  The response to this method is the bytes of the PDF file. The response includes the HTTP header `application/pdf`.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage` or `click.send`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1063,10 +1196,10 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str agreement_id: (required)
-        :param str clickwrap_id: (required)
-        :param str include_coc:
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str agreement_id: The agreement ID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
+        :param str include_coc: When **true,** the Certificate of Completion will be appended to the PDF. The default value is **false.**
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1080,7 +1213,8 @@ class AccountsApi(object):
 
     def get_agreement_pdf_with_http_info(self, account_id, agreement_id, clickwrap_id, **kwargs):
         """
-        Downloads the agreement PDF and optionally certificate of completion.
+        Gets the completed user agreement PDF.
+        Gets the PDF of  `agreementId` for the clickwrap specified by `clickwrapId`.  The response to this method is the bytes of the PDF file. The response includes the HTTP header `application/pdf`.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage` or `click.send`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1091,10 +1225,10 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str agreement_id: (required)
-        :param str clickwrap_id: (required)
-        :param str include_coc:
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str agreement_id: The agreement ID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
+        :param str include_coc: When **true,** the Certificate of Completion will be appended to the PDF. The default value is **false.**
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1171,7 +1305,8 @@ class AccountsApi(object):
 
     def get_clickwrap(self, account_id, clickwrap_id, **kwargs):
         """
-        Gets the clickwrap for an account specified by clickwrapId
+        Gets a  single clickwrap object.
+        Retrieves the definition of the specified clickwrap.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1182,8 +1317,8 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
         :return: ClickwrapVersionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1197,7 +1332,8 @@ class AccountsApi(object):
 
     def get_clickwrap_with_http_info(self, account_id, clickwrap_id, **kwargs):
         """
-        Gets the clickwrap for an account specified by clickwrapId
+        Gets a  single clickwrap object.
+        Retrieves the definition of the specified clickwrap.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1208,8 +1344,8 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
         :return: ClickwrapVersionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1279,7 +1415,8 @@ class AccountsApi(object):
 
     def get_clickwrap_agreements(self, account_id, clickwrap_id, **kwargs):
         """
-        Gets the agreement responses for a clickwrap
+        Get user agreements
+        Retrieves the user agreements for a specified clickwrap. Each `userAgreementResponse` object describes a single user's response to the clickwrap. You can also filter the agreements by date, status, page number, and client user ID.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1290,13 +1427,13 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param str client_user_id:
-        :param str from_date:
-        :param str page_number:
-        :param str status:
-        :param str to_date:
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
+        :param str client_user_id: The client user ID to filter to a single user's agreements.
+        :param str from_date: The earliest date to return agreements from.
+        :param str page_number: The results for this endpoint are paginated. Use this parameter to indicate which page to return. The `minimumPagesRemaining` value in the response indicates whether to continue querying for additional pages.  For example, if the page size is 40: * If this property is set to 0 (the default), the endpoint returns results 1-40. * If this property is set to 1, the endpoint returns results 41-80.  The default value is 0. 
+        :param str status: User agreement status. One of:  - `created` - `agreed` - `declined`
+        :param str to_date: The latest date to return agreements from.
         :return: ClickwrapAgreementsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1310,7 +1447,8 @@ class AccountsApi(object):
 
     def get_clickwrap_agreements_with_http_info(self, account_id, clickwrap_id, **kwargs):
         """
-        Gets the agreement responses for a clickwrap
+        Get user agreements
+        Retrieves the user agreements for a specified clickwrap. Each `userAgreementResponse` object describes a single user's response to the clickwrap. You can also filter the agreements by date, status, page number, and client user ID.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1321,13 +1459,13 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param str client_user_id:
-        :param str from_date:
-        :param str page_number:
-        :param str status:
-        :param str to_date:
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
+        :param str client_user_id: The client user ID to filter to a single user's agreements.
+        :param str from_date: The earliest date to return agreements from.
+        :param str page_number: The results for this endpoint are paginated. Use this parameter to indicate which page to return. The `minimumPagesRemaining` value in the response indicates whether to continue querying for additional pages.  For example, if the page size is 40: * If this property is set to 0 (the default), the endpoint returns results 1-40. * If this property is set to 1, the endpoint returns results 41-80.  The default value is 0. 
+        :param str status: User agreement status. One of:  - `created` - `agreed` - `declined`
+        :param str to_date: The latest date to return agreements from.
         :return: ClickwrapAgreementsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1407,7 +1545,8 @@ class AccountsApi(object):
 
     def get_clickwrap_version(self, account_id, clickwrap_id, version_id, **kwargs):
         """
-        Gets the Clickwrap version by clickwrapId and versionId for an account
+        Gets a specific version of a clickwrap by version ID.
+        Gets the version specified by `versionId`  from the clickwrap `clickwrapId`.  **Note:** This endpoint requires the version ID (a GUID), not the version number (an integer).  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1418,9 +1557,9 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param str version_id: (required)
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
+        :param str version_id: The ID of the clickwrap version. (required)
         :return: ClickwrapVersionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1434,7 +1573,8 @@ class AccountsApi(object):
 
     def get_clickwrap_version_with_http_info(self, account_id, clickwrap_id, version_id, **kwargs):
         """
-        Gets the Clickwrap version by clickwrapId and versionId for an account
+        Gets a specific version of a clickwrap by version ID.
+        Gets the version specified by `versionId`  from the clickwrap `clickwrapId`.  **Note:** This endpoint requires the version ID (a GUID), not the version number (an integer).  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1445,9 +1585,9 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param str version_id: (required)
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
+        :param str version_id: The ID of the clickwrap version. (required)
         :return: ClickwrapVersionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1522,7 +1662,8 @@ class AccountsApi(object):
 
     def get_clickwrap_version_agreements(self, account_id, clickwrap_id, version_id, **kwargs):
         """
-        Gets the agreement responses for a clickwrap version
+        Gets the agreement responses for a clickwrap version by version ID.
+        Gets the agreement responses for a specific version.  **Note:** This endpoint requires the version ID (a GUID), not the version number (an integer).  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1533,14 +1674,14 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param str version_id: (required)
-        :param str client_user_id:
-        :param str from_date:
-        :param str page_number:
-        :param str status:
-        :param str to_date:
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
+        :param str version_id: The ID of the clickwrap version. (required)
+        :param str client_user_id: The client user ID to filter to a single user's agreements.
+        :param str from_date: The earliest date to return agreements from.
+        :param str page_number: The results for this endpoint are paginated. Use this parameter to indicate which page to return. The `minimumPagesRemaining` value in the response indicates whether to continue querying for additional pages.  For example, if the page size is 40: * If this property is set to 0 (the default), the endpoint returns results 1-40. * If this property is set to 1, the endpoint returns results 41-80.  The default value is 0. 
+        :param str status: User agreement status. One of:  - `created` - `agreed` - `declined`
+        :param str to_date: The latest date to return agreements from.
         :return: ClickwrapAgreementsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1554,7 +1695,8 @@ class AccountsApi(object):
 
     def get_clickwrap_version_agreements_with_http_info(self, account_id, clickwrap_id, version_id, **kwargs):
         """
-        Gets the agreement responses for a clickwrap version
+        Gets the agreement responses for a clickwrap version by version ID.
+        Gets the agreement responses for a specific version.  **Note:** This endpoint requires the version ID (a GUID), not the version number (an integer).  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1565,14 +1707,14 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param str version_id: (required)
-        :param str client_user_id:
-        :param str from_date:
-        :param str page_number:
-        :param str status:
-        :param str to_date:
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
+        :param str version_id: The ID of the clickwrap version. (required)
+        :param str client_user_id: The client user ID to filter to a single user's agreements.
+        :param str from_date: The earliest date to return agreements from.
+        :param str page_number: The results for this endpoint are paginated. Use this parameter to indicate which page to return. The `minimumPagesRemaining` value in the response indicates whether to continue querying for additional pages.  For example, if the page size is 40: * If this property is set to 0 (the default), the endpoint returns results 1-40. * If this property is set to 1, the endpoint returns results 41-80.  The default value is 0. 
+        :param str status: User agreement status. One of:  - `created` - `agreed` - `declined`
+        :param str to_date: The latest date to return agreements from.
         :return: ClickwrapAgreementsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1657,7 +1799,8 @@ class AccountsApi(object):
 
     def get_clickwrap_versions(self, account_id, clickwrap_id, **kwargs):
         """
-        Gets all the versions of a clickwrap for an account
+        Gets all the versions of a clickwrap.
+        Gets all the versions of a clickwrap for an account.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1668,8 +1811,8 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
         :return: ClickwrapVersionsPagedResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1683,7 +1826,8 @@ class AccountsApi(object):
 
     def get_clickwrap_versions_with_http_info(self, account_id, clickwrap_id, **kwargs):
         """
-        Gets all the versions of a clickwrap for an account
+        Gets all the versions of a clickwrap.
+        Gets all the versions of a clickwrap for an account.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1694,8 +1838,8 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
         :return: ClickwrapVersionsPagedResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1765,7 +1909,8 @@ class AccountsApi(object):
 
     def get_clickwraps(self, account_id, **kwargs):
         """
-        Gets the Clickwraps for an account
+        Gets all the clickwraps for a user.
+        Gets all the clickwraps for a user.   **Note:** This endpoint returns a list of `clickwrapVersionSummaryResponse` objects. Each version of each clickwrap is returned as a separate entry in the list.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1776,14 +1921,14 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str filter:
-        :param str from_date:
-        :param str name:
-        :param str owner_user_id:
-        :param str page_number:
-        :param str status:
-        :param str to_date:
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str filter: Names of columns by which to filter and values to match on.
+        :param str from_date: The earliest date to return clickwraps from.
+        :param str name: The name of the clickwraps to return.
+        :param str owner_user_id: The user ID of the owner.
+        :param str page_number: The results for this endpoint are paginated. Use this parameter to indicate which page to return. The `minimumPagesRemaining` value in the response indicates whether to continue querying for additional pages.  For example, if the page size is 40: * If this property is set to 0 (the default), the endpoint returns results 1-40. * If this property is set to 1, the endpoint returns results 41-80.  The default value is 0. 
+        :param str status: The status of the clickwraps to filter by. One of:  - `active` - `inactive`  
+        :param str to_date: The latest date to return clickwraps from.
         :return: ClickwrapVersionsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1797,7 +1942,8 @@ class AccountsApi(object):
 
     def get_clickwraps_with_http_info(self, account_id, **kwargs):
         """
-        Gets the Clickwraps for an account
+        Gets all the clickwraps for a user.
+        Gets all the clickwraps for a user.   **Note:** This endpoint returns a list of `clickwrapVersionSummaryResponse` objects. Each version of each clickwrap is returned as a separate entry in the list.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1808,14 +1954,14 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str filter:
-        :param str from_date:
-        :param str name:
-        :param str owner_user_id:
-        :param str page_number:
-        :param str status:
-        :param str to_date:
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str filter: Names of columns by which to filter and values to match on.
+        :param str from_date: The earliest date to return clickwraps from.
+        :param str name: The name of the clickwraps to return.
+        :param str owner_user_id: The user ID of the owner.
+        :param str page_number: The results for this endpoint are paginated. Use this parameter to indicate which page to return. The `minimumPagesRemaining` value in the response indicates whether to continue querying for additional pages.  For example, if the page size is 40: * If this property is set to 0 (the default), the endpoint returns results 1-40. * If this property is set to 1, the endpoint returns results 41-80.  The default value is 0. 
+        :param str status: The status of the clickwraps to filter by. One of:  - `active` - `inactive`  
+        :param str to_date: The latest date to return clickwraps from.
         :return: ClickwrapVersionsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1894,7 +2040,8 @@ class AccountsApi(object):
 
     def get_service_information(self, **kwargs):
         """
-        Provides base service and version access information.
+        Gets the current version and other information about the Click API.
+        The response includes information about the Click API, including the service version, build version, and linked sites.  This method does not require authentication.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1918,7 +2065,8 @@ class AccountsApi(object):
 
     def get_service_information_with_http_info(self, **kwargs):
         """
-        Provides base service and version access information.
+        Gets the current version and other information about the Click API.
+        The response includes information about the Click API, including the service version, build version, and linked sites.  This method does not require authentication.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1987,7 +2135,8 @@ class AccountsApi(object):
 
     def update_clickwrap(self, account_id, clickwrap_id, **kwargs):
         """
-        Updates the clickwrap specified by clickwrapId
+        Update a clickwrap by ID.
+        Update a subset of properties on the clickwrap.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1998,9 +2147,9 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param ClickwrapTransferRequest clickwrap_transfer_request:
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
+        :param ClickwrapTransferRequest clickwrap_transfer_request: Data used to transfer a clickwrap from one user to another.
         :return: ClickwrapVersionSummaryResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2014,7 +2163,8 @@ class AccountsApi(object):
 
     def update_clickwrap_with_http_info(self, account_id, clickwrap_id, **kwargs):
         """
-        Updates the clickwrap specified by clickwrapId
+        Update a clickwrap by ID.
+        Update a subset of properties on the clickwrap.  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -2025,9 +2175,9 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param ClickwrapTransferRequest clickwrap_transfer_request:
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
+        :param ClickwrapTransferRequest clickwrap_transfer_request: Data used to transfer a clickwrap from one user to another.
         :return: ClickwrapVersionSummaryResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2099,7 +2249,8 @@ class AccountsApi(object):
 
     def update_clickwrap_version(self, account_id, clickwrap_id, version_id, **kwargs):
         """
-        Updates the clickwrap version specified by versionId
+        Updates clickwrap version status and ownership.
+        Updates the clickwrap version status and ownership by transferring from previous user ID to new user ID.  **Note:** This endpoint requires the version ID (a GUID), not the version number (an integer).  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -2110,10 +2261,10 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param str version_id: (required)
-        :param ClickwrapRequest clickwrap_request:
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
+        :param str version_id: The ID of the clickwrap version. (required)
+        :param ClickwrapRequest clickwrap_request: Request body for working with clickwrap.
         :return: ClickwrapVersionSummaryResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2127,7 +2278,8 @@ class AccountsApi(object):
 
     def update_clickwrap_version_with_http_info(self, account_id, clickwrap_id, version_id, **kwargs):
         """
-        Updates the clickwrap version specified by versionId
+        Updates clickwrap version status and ownership.
+        Updates the clickwrap version status and ownership by transferring from previous user ID to new user ID.  **Note:** This endpoint requires the version ID (a GUID), not the version number (an integer).  [Required authentication scopes](/docs/click-api/click101/auth/): `click.manage`.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -2138,10 +2290,10 @@ class AccountsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str account_id: (required)
-        :param str clickwrap_id: (required)
-        :param str version_id: (required)
-        :param ClickwrapRequest clickwrap_request:
+        :param str account_id: The external account number (int) or account ID GUID. (required)
+        :param str clickwrap_id: The ID of the clickwrap. (required)
+        :param str version_id: The ID of the clickwrap version. (required)
+        :param ClickwrapRequest clickwrap_request: Request body for working with clickwrap.
         :return: ClickwrapVersionSummaryResponse
                  If the method is called asynchronously,
                  returns the request thread.

@@ -3,7 +3,7 @@
 """
     DocuSign Click API
 
-    DocuSign Click lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable clickwrap solution in your DocuSign integrations.  # noqa: E501
+    Elastic signing (also known as DocuSign Click)  lets you capture consent to standard agreement terms with a single click: terms and conditions, terms of service, terms of use, privacy policies, and more. The Click API lets you include this customizable elastic template solution in your DocuSign integrations.  # noqa: E501
 
     OpenAPI spec version: v1
     Contact: devcenter@docusign.com
@@ -35,13 +35,15 @@ class UserAgreementRequest(object):
     swagger_types = {
         'client_user_id': 'str',
         'document_data': 'dict(str, str)',
-        'metadata': 'str'
+        'metadata': 'str',
+        'return_url': 'str'
     }
 
     attribute_map = {
         'client_user_id': 'clientUserId',
         'document_data': 'documentData',
-        'metadata': 'metadata'
+        'metadata': 'metadata',
+        'return_url': 'returnUrl'
     }
 
     def __init__(self, _configuration=None, **kwargs):  # noqa: E501
@@ -53,17 +55,19 @@ class UserAgreementRequest(object):
         self._client_user_id = None
         self._document_data = None
         self._metadata = None
+        self._return_url = None
         self.discriminator = None
 
         setattr(self, "_{}".format('client_user_id'), kwargs.get('client_user_id', None))
         setattr(self, "_{}".format('document_data'), kwargs.get('document_data', None))
         setattr(self, "_{}".format('metadata'), kwargs.get('metadata', None))
+        setattr(self, "_{}".format('return_url'), kwargs.get('return_url', None))
 
     @property
     def client_user_id(self):
         """Gets the client_user_id of this UserAgreementRequest.  # noqa: E501
 
-          # noqa: E501
+        A unique value that identifies a user. You can use anything that your system uses to identify unique users, such as employee IDs, email addresses, and surrogate keys as the value of `clientUserId`.  A clickwrap with a specific `clientUserId` will not appear again once it has been accepted.   # noqa: E501
 
         :return: The client_user_id of this UserAgreementRequest.  # noqa: E501
         :rtype: str
@@ -74,7 +78,7 @@ class UserAgreementRequest(object):
     def client_user_id(self, client_user_id):
         """Sets the client_user_id of this UserAgreementRequest.
 
-          # noqa: E501
+        A unique value that identifies a user. You can use anything that your system uses to identify unique users, such as employee IDs, email addresses, and surrogate keys as the value of `clientUserId`.  A clickwrap with a specific `clientUserId` will not appear again once it has been accepted.   # noqa: E501
 
         :param client_user_id: The client_user_id of this UserAgreementRequest.  # noqa: E501
         :type: str
@@ -86,7 +90,7 @@ class UserAgreementRequest(object):
     def document_data(self):
         """Gets the document_data of this UserAgreementRequest.  # noqa: E501
 
-          # noqa: E501
+        This property specifies the data used to create a clickwrap with [dynamic content][].    [dynamic content]: /docs/click-api/click101/customize-clickwrap-fields/#embed-clickwraps-that-contain-dynamic-content   # noqa: E501
 
         :return: The document_data of this UserAgreementRequest.  # noqa: E501
         :rtype: dict(str, str)
@@ -97,7 +101,7 @@ class UserAgreementRequest(object):
     def document_data(self, document_data):
         """Sets the document_data of this UserAgreementRequest.
 
-          # noqa: E501
+        This property specifies the data used to create a clickwrap with [dynamic content][].    [dynamic content]: /docs/click-api/click101/customize-clickwrap-fields/#embed-clickwraps-that-contain-dynamic-content   # noqa: E501
 
         :param document_data: The document_data of this UserAgreementRequest.  # noqa: E501
         :type: dict(str, str)
@@ -109,7 +113,7 @@ class UserAgreementRequest(object):
     def metadata(self):
         """Gets the metadata of this UserAgreementRequest.  # noqa: E501
 
-          # noqa: E501
+        A customer-defined string you can use in requests. This string will appear in the corresponding response.  # noqa: E501
 
         :return: The metadata of this UserAgreementRequest.  # noqa: E501
         :rtype: str
@@ -120,13 +124,36 @@ class UserAgreementRequest(object):
     def metadata(self, metadata):
         """Sets the metadata of this UserAgreementRequest.
 
-          # noqa: E501
+        A customer-defined string you can use in requests. This string will appear in the corresponding response.  # noqa: E501
 
         :param metadata: The metadata of this UserAgreementRequest.  # noqa: E501
         :type: str
         """
 
         self._metadata = metadata
+
+    @property
+    def return_url(self):
+        """Gets the return_url of this UserAgreementRequest.  # noqa: E501
+
+        The URL to redirect to after the agreement is complete when the agreement is not rendered in an iframe.  # noqa: E501
+
+        :return: The return_url of this UserAgreementRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._return_url
+
+    @return_url.setter
+    def return_url(self, return_url):
+        """Sets the return_url of this UserAgreementRequest.
+
+        The URL to redirect to after the agreement is complete when the agreement is not rendered in an iframe.  # noqa: E501
+
+        :param return_url: The return_url of this UserAgreementRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._return_url = return_url
 
     def to_dict(self):
         """Returns the model properties as a dict"""
