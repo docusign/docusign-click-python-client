@@ -50,7 +50,7 @@ class UserAgreementResponse(object):
         'return_url': 'str',
         'settings': 'DisplaySettings',
         'status': 'str',
-        'style': 'dict(str, str)',
+        'style': 'UserAgreementResponseStyle',
         'version': 'str',
         'version_id': 'str',
         'version_number': 'int'
@@ -526,10 +526,9 @@ class UserAgreementResponse(object):
     def style(self):
         """Gets the style of this UserAgreementResponse.  # noqa: E501
 
-        This property specifies the custom style provided when the agreement was created by [customizing the template appearance][].    [customizing the template appearance]: /docs/click-api/click101/customize-elastic-template-appearance/   # noqa: E501
 
         :return: The style of this UserAgreementResponse.  # noqa: E501
-        :rtype: dict(str, str)
+        :rtype: UserAgreementResponseStyle
         """
         return self._style
 
@@ -537,10 +536,9 @@ class UserAgreementResponse(object):
     def style(self, style):
         """Sets the style of this UserAgreementResponse.
 
-        This property specifies the custom style provided when the agreement was created by [customizing the template appearance][].    [customizing the template appearance]: /docs/click-api/click101/customize-elastic-template-appearance/   # noqa: E501
 
         :param style: The style of this UserAgreementResponse.  # noqa: E501
-        :type: dict(str, str)
+        :type: UserAgreementResponseStyle
         """
 
         self._style = style
